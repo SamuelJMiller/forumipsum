@@ -61,4 +61,17 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "mail.bigbademail.com",
+    :port => 587,
+    :domain => "bigbademail.com",
+    :authentication => :login,
+    :user_name => "s@itsecureadmin.com",
+    :password => "[password]"
+  }
 end
