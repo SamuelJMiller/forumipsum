@@ -1,0 +1,2 @@
+module ForumthreadsHelper
+end

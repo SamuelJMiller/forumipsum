@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @forumthread.title %>
+</p>
+
+<p>
+  <strong>Replycount:</strong>
+  <%= @forumthread.replycount %>
+</p>
+
+<%= link_to 'Edit', edit_forumthread_path(@forumthread) %> |
+<%= link_to 'Back', forumthreads_path %>
