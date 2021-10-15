@@ -55,4 +55,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_form', '~> 5.1', '>= 5.1.0'
 gem 'devise', '~> 4.8', '>= 4.8.0'
-gem 'mysql2', '~> 0.5', '>= 0.5.3'
