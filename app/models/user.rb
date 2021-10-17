@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
   # All devise modules are enabled in the database migration file
+
+  # Make sure username is unique and handle name conflicts gracefully
+  validates_uniqueness_of :username
 end
