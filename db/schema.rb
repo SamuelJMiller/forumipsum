@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_171800) do
+ActiveRecord::Schema.define(version: 2021_10_17_173947) do
 
   create_table "forumthreads", force: :cascade do |t|
     t.string "title"
-    t.integer "replycount"
+    t.integer "replycount", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
