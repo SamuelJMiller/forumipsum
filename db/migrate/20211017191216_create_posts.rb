@@ -9,5 +9,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_column :forumthreads, :is_banned, :boolean, default: false
   end
 end
