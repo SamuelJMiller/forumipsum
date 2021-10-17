@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Forumthread', new_forumthread_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Forumthread', new_forumthread_path %>
+<% end %>
