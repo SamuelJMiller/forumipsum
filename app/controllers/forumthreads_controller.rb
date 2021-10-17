@@ -1,5 +1,7 @@
 class ForumthreadsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_forumthread, only: %i[ show edit update destroy ]
+  before_action :authorize_item, only: [:update, :edit, :destroy]
 
   # GET /forumthreads or /forumthreads.json
   def index
@@ -65,5 +67,11 @@ class ForumthreadsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def forumthread_params
       params.require(:forumthread).permit(:title, :replycount)
+    end
+
+    def authorize_item
+      unless @forumthread.user == current_user
+        redirect_to root_path, error: "You do not have permission to do that."
+      end
     end
 end
