@@ -1,7 +1,8 @@
 class ForumthreadsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_forumthread, only: %i[ show edit update destroy ]
-  before_action :authorize_item, only: [:update, :edit, :destroy]
+  before_action :authorize_item, only: [:update, :edit]
+  before_action :authorize_destroy, only: [:destroy]
 
   # GET /forumthreads or /forumthreads.json
   def index
@@ -72,6 +73,12 @@ class ForumthreadsController < ApplicationController
     def authorize_item
       unless @forumthread.user == current_user
         redirect_to root_path, error: "You do not have permission to do that."
+      end
+    end
+
+    def authorize_destroy
+      unless @forumthread.user.role > 0
+        redirect_to root_path, error: "You do not have permission to delete threads."
       end
     end
 end
