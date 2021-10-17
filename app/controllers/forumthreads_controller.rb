@@ -12,7 +12,7 @@ class ForumthreadsController < ApplicationController
 
   # GET /forumthreads/new
   def new
-    @forumthread = Forumthread.new
+    @forumthread = current_user.forumthreads.build
   end
 
   # GET /forumthreads/1/edit
@@ -21,7 +21,7 @@ class ForumthreadsController < ApplicationController
 
   # POST /forumthreads or /forumthreads.json
   def create
-    @forumthread = Forumthread.new(forumthread_params)
+    @forumthread = current_user.forumthreads.build(forumthread_params)
 
     respond_to do |format|
       if @forumthread.save

@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
   # Make sure username is unique and handle name conflicts gracefully
   validates_uniqueness_of :username
+
+  # Threads association
+  has_many :forumthreads
 end
