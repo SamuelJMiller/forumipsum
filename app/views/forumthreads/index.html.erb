@@ -20,7 +20,7 @@
         <td><%= forumthread.created_at %></td>
         <td><%= link_to 'Show', forumthread %></td>
         <td><%= link_to 'Edit', edit_forumthread_path(forumthread) %></td>
-        <td><%= link_to 'Destroy', forumthread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', forumthread, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

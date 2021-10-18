@@ -71,14 +71,21 @@ class ForumthreadsController < ApplicationController
     end
 
     def authorize_item
-      unless @forumthread.user == current_user
-        redirect_to root_path, error: "You do not have permission to do that."
+      # Nobody can edit threads
+      if @forumthread.user != current_user
+        flash[:notice] = "That's not yours."
+        redirect_to root_path
+      else
+        flash[:notice] = "You cannot edit threads after they have been created."
+        redirect_to root_path
       end
     end
 
     def authorize_destroy
+      # Only Mod+ can delete threads
       unless @forumthread.user.role > 0
-        redirect_to root_path, error: "You do not have permission to delete threads."
+        flash[:notice] = "You do not have permission to delete threads."
+        redirect_to root_path
       end
     end
 end
