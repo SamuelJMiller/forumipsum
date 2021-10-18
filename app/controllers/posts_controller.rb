@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @forumthread = Forumthread.find(params[:forumthread_id])
-    @post = @forumthread.posts.create(params[:post].permit(:post))
+    # Have to allow all the columns
+    @post = @forumthread.posts.create(params[:post].permit(:user_id, :forumthread_id, :body, :feedback_score, :is_banned))
     @post.user_id = current_user.id if current_user
     @post.save
 
