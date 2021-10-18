@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :authorize_item, only: [:update, :edit]
+  before_action :authorize_destroy, only: [:destroy]
 
   # GET /posts or /posts.json
   def index
@@ -69,5 +72,24 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:user_id, :forumthread_id, :body, :feedback_score, :is_banned)
+    end
+
+    def authorize_item
+      # Nobody can edit posts
+      if @post.user != current_user
+        flash[:notice] = "That's not yours."
+        redirect_to forumthread_posts_url
+      else
+        flash[:notice] = "You cannot edit posts after they have been published."
+        redirect_to forumthread_posts_url
+      end
+    end
+
+    def authorize_destroy
+      # Only Mod+ can delete posts
+      unless @post.user.role > 0
+        flash[:notice] = "You do not have permission to delete posts."
+        redirect_to forumthread_posts_url
+      end
     end
 end
