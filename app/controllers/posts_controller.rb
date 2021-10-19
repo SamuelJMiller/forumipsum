@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authorize_item, only: [:update, :edit]
+  before_action :cannot_edit, only: [:update, :edit]
   before_action :authorize_destroy, only: [:destroy]
 
   # GET /posts or /posts.json
@@ -77,7 +77,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:user_id, :forumthread_id, :body, :feedback_score, :is_banned)
     end
 
-    def authorize_item
+    def cannot_edit
       # Nobody can edit posts
       if @post.user != current_user
         flash[:notice] = "That's not yours."

@@ -1,7 +1,7 @@
 class ForumthreadsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_forumthread, only: %i[ show edit update destroy ]
-  before_action :authorize_item, only: [:update, :edit]
+  before_action :cannot_edit, only: [:update, :edit]
   before_action :authorize_destroy, only: [:destroy]
 
   # GET /forumthreads or /forumthreads.json
@@ -70,7 +70,7 @@ class ForumthreadsController < ApplicationController
       params.require(:forumthread).permit(:title, :replycount, :initial_post)
     end
 
-    def authorize_item
+    def cannot_edit
       # Nobody can edit threads
       if @forumthread.user != current_user
         flash[:notice] = "That's not yours."
