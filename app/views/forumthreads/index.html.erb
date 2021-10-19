@@ -2,12 +2,13 @@
 
 <h1>Forumthreads</h1>
 
-<table>
+<table class="border-table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Replycount</th>
-      <th>CreatedAt</th>
+      <th>Replies</th>
+      <th>Created</th>
+      <th>Started by</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +16,10 @@
   <tbody>
     <% @forumthreads.each do |forumthread| %>
       <tr>
-        <td><%= forumthread.title %></td>
+        <td><%= link_to forumthread.title, forumthread %></td>
         <td><%= forumthread.replycount %></td>
-        <td><%= forumthread.created_at %></td>
-        <td><%= link_to 'Show', forumthread %></td>
+        <td><%= time_ago_in_words(forumthread.created_at) %> ago</td>
+        <td><%= forumthread.user.username %></td>
         <td><%= link_to 'Edit', edit_forumthread_path(forumthread) %></td>
         <td><%= link_to 'Destroy', forumthread, method: :delete %></td>
       </tr>
@@ -29,5 +30,5 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Forumthread', new_forumthread_path %>
+  <%= link_to 'New Thread', new_forumthread_path %>
 <% end %>
