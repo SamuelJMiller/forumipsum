@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :cannot_edit, only: [:update, :edit]
   before_action :authorize_destroy, only: [:destroy]
+  before_action :redirect_to_thread, only: [:show, :index]
 
   # GET /posts or /posts.json
   def index
@@ -94,5 +95,10 @@ class PostsController < ApplicationController
         flash[:notice] = "You do not have permission to delete posts."
         redirect_to forumthread_posts_url
       end
+    end
+
+    def redirect_to_thread
+      # Redirect to thread page instead of showing post or post index
+      redirect_to forumthread_url(params[:forumthread_id])
     end
 end
