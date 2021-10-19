@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @forumthread.title %>
-</p>
+<table class="border-table">
+  <thead>
+    <tr>
+      <th colspan="2"><%= @forumthread.title %></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Replycount:</strong>
-  <%= @forumthread.replycount %>
-</p>
-
-<p>
-  <strong>Initial post:</strong>
-  <%= @forumthread.initial_post %>
-</p>
+  <tbody>
+    <% @forumthread.posts.each do |post| %>
+      <tr>
+        <td><%= post.user.username %></td>
+        <td><%= post.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_forumthread_path(@forumthread) %> |
 <%= link_to 'Back', forumthreads_path %>
