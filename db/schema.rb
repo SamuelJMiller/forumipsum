@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_050658) do
+ActiveRecord::Schema.define(version: 2021_10_19_003336) do
 
   create_table "forumthreads", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_050658) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.boolean "is_banned", default: false
+    t.text "initial_post"
   end
 
   create_table "posts", force: :cascade do |t|
