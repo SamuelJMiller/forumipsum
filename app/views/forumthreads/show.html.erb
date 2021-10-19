@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Back to Threads", root_path %>
+
 <table class="border-table">
   <thead>
     <tr>
@@ -17,5 +19,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_forumthread_path(@forumthread) %> |
-<%= link_to 'Back', forumthreads_path %>
+<%= link_to "Reply", new_forumthread_post_path(@forumthread.id) %>
