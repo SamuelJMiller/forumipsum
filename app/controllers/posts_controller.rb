@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = current_user.posts.build
+    # new needs the forumthread_id also
+    @post.forumthread_id = params[:forumthread_id]
   end
 
   # GET /posts/1/edit
