@@ -20,6 +20,7 @@
       <tr>
         <td><%= post.user.username %></td>
         <td><%= post.body %></td>
+        <td><%= link_to 'Destroy', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
