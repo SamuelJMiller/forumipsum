@@ -10,5 +10,10 @@
   <%= @forumthread.replycount %>
 </p>
 
+<p>
+  <strong>Initial post:</strong>
+  <%= @forumthread.initial_post %>
+</p>
+
 <%= link_to 'Edit', edit_forumthread_path(@forumthread) %> |
 <%= link_to 'Back', forumthreads_path %>

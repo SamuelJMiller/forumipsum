@@ -67,7 +67,7 @@ class ForumthreadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def forumthread_params
-      params.require(:forumthread).permit(:title, :replycount)
+      params.require(:forumthread).permit(:title, :replycount, :initial_post)
     end
 
     def authorize_item
