@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def create
     @forumthread = Forumthread.find(params[:forumthread_id])
     # Have to allow all the columns
-    @post = @forumthread.posts.create(params[:post].permit(:user_id, :forumthread_id, :body, :feedback_score, :is_banned))
+    @post = @forumthread.posts.create(params[:post].permit(:body))
     @post.user_id = current_user.id if current_user
     @post.save
 
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:user_id, :forumthread_id, :body, :feedback_score, :is_banned)
+      params.require(:post).permit(:body)
     end
 
     def cannot_edit
