@@ -33,6 +33,9 @@ class PostsController < ApplicationController
     @post = @forumthread.posts.create(params[:post].permit(:body))
     @post.user_id = current_user.id if current_user
     @post.save
+    # Increment thread's replycount with each new post
+    @forumthread.replycount += 1
+    @forumthread.save
 
     respond_to do |format|
       if @post.save
