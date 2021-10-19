@@ -28,7 +28,8 @@ class ForumthreadsController < ApplicationController
 
     respond_to do |format|
       if @forumthread.save
-        format.html { redirect_to @forumthread, notice: "Forumthread was successfully created." }
+        # Redirect to main page after creation
+        format.html { redirect_to root_path, notice: "Forumthread was successfully created." }
         format.json { render :show, status: :created, location: @forumthread }
       else
         format.html { render :new, status: :unprocessable_entity }
