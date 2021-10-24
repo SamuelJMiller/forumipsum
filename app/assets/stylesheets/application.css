@@ -108,7 +108,8 @@ div#main {
 }
 
 #new-thread-header,
-#new-post-header {
+#new-post-header,
+#log-in-header {
     margin-bottom: 10px;
 }
 
