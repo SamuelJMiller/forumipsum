@@ -95,6 +95,10 @@ div#main {
     text-align: center;
 }
 
+.form-inputs input {
+    margin-bottom: 10px;
+}
+
 #thread-title-entry input,
 #thread-initial-post-entry textarea,
 #post-body-entry textarea,
@@ -111,14 +115,16 @@ div#main {
 
 #new-thread-header,
 #new-post-header,
-#log-in-header {
+div#main h2 {
     margin-bottom: 10px;
 }
 
 .thread-links a:link,
 .thread-back-reply a:link,
 .cancel-content-create a:link,
-.devise-links a:link {
+.devise-links a:link,
+a[href="/users/sign_in"]:link,
+a[href="/users/confirmation/new"]:link {
     color: #0693e3;
     text-decoration: none;
 }
@@ -126,7 +132,9 @@ div#main {
 .thread-links a:hover,
 .thread-back-reply a:hover,
 .cancel-content-create a:hover,
-.devise-links a:hover {
+.devise-links a:hover,
+a[href="/users/sign_in"]:hover,
+a[href="/users/confirmation/new"]:hover {
     background-color: transparent;
     color: #0c2d88;
 }
