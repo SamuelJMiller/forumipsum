@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id="thread-title-entry" class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div id="thread-initial-post-entry" class="field">
     <%= form.label :initial_post %>
-    <%= form.text_area :initial_post %>
+    <%= form.text_area :initial_post, size: "50x5" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div id="thread-submit-button" class="actions">
+    <%= form.submit "Create Thread" %>
   </div>
 <% end %>

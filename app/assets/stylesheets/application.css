@@ -38,6 +38,7 @@
 body {
     background-color: #F5F5F5;
     margin: 0 0 50px 0;
+    padding-bottom: 15px; /* for div#main */
 }
 
 #main-header {
@@ -84,7 +85,7 @@ body {
 div#main {
     background-color: white;
     display: table;
-    margin-top: 15px;
+    margin-top: 15px; /* bottom margin is implemented via body bottom padding */
     margin-right: auto;
     margin-left: auto;
     padding: 25px;
@@ -94,14 +95,33 @@ div#main {
     text-align: center;
 }
 
+#thread-title-entry input,
+#thread-initial-post-entry textarea,
+#post-body-entry textarea {
+    background-color: #f2f2f2;
+}
+
+#thread-submit-button input,
+#post-submit-button input {
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+
+#new-thread-header,
+#new-post-header {
+    margin-bottom: 10px;
+}
+
 .thread-links a:link,
-.thread-back-reply a:link {
+.thread-back-reply a:link,
+.cancel-content-create a:link {
     color: #0693e3;
     text-decoration: none;
 }
 
 .thread-links a:hover,
-.thread-back-reply a:hover {
+.thread-back-reply a:hover,
+.cancel-content-create a:hover {
     background-color: transparent;
     color: #0c2d88;
 }

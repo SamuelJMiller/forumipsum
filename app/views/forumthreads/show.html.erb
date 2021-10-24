@@ -11,7 +11,7 @@
       <tr>
         <td><%= @forumthread.user.username %></td>
         <td>
-          <%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago
+        <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
           <br>
           <br>
           <p class="post-body"><%= @forumthread.initial_post %></p>

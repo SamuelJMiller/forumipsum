@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id="post-body-entry" class="field">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, size: "50x5" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div id="post-submit-button" class="actions">
+    <%= form.submit "Create Post" %>
   </div>
 <% end %>
