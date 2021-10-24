@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Threads</h1>
+<h1 id="threads-header">Threads</h1>
 
 <table class="border-table">
-  <thead>
+  <tbody>
     <tr>
       <th>Title</th>
       <th>User</th>
@@ -12,18 +10,15 @@
       <th>Created</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
-
-  <tbody>
     <% @forumthreads.each do |forumthread| %>
       <tr>
-        <td><%= link_to forumthread.title, forumthread %></td>
+        <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
         <td><%= forumthread.user.username %></td>
         <td><%= forumthread.replycount %></td>
         <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
             by <%= forumthread.posts.last.user.username %></td>
         <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
-        <td><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
+        <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

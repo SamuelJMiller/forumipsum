@@ -22,6 +22,10 @@
     background: transparent;
 }
 
+#notice {
+    text-align: center;
+}
+
 .clearfix:before, .clearfix:after {
     content: " ";
     display: table;
@@ -62,7 +66,7 @@ body {
 
 .header-right a:hover {
     background-color: white;
-    color: #0693e3;
+    color: #0c2d88;
 }
 
 #name-label {
@@ -77,10 +81,52 @@ body {
     margin-right: 25px;
 }
 
-.border-table {
-    border-collapse: collapse;
+div#main {
+    background-color: white;
+    display: table;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px;
 }
 
-.border-table td, .border-table th {
-    border: 1px solid black;
+#threads-header {
+    text-align: center;
+}
+
+.thread-links a:link {
+    color: #0693e3;
+    text-decoration: none;
+}
+
+.thread-links a:hover {
+    background-color: white;
+    color: #0c2d88;
+}
+
+.ban-thread a:link {
+    color: red;
+    text-decoration: none;
+}
+
+.ban-thread a:hover {
+    background-color: white;
+    color: rgb(141, 51, 153);
+}
+
+.border-table {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.border-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.border-table tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.border-table td {
+    padding: 0 25px;
 }
