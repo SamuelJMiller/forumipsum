@@ -121,6 +121,12 @@ div#main {
     margin-bottom: 10px;
 }
 
+#thread-submit-button input:hover,
+#post-submit-button input:hover,
+.form-actions input:hover {
+    background-color: #dfdfdf;
+}
+
 #new-thread-header,
 #new-post-header,
 div#main h2 {
@@ -182,6 +188,33 @@ a[href="/users/confirmation/new"]:hover {
 
 .border-table td {
     padding: 0 25px;
+}
+
+.show-posts {
+    background-color: #f2f2f2;
+    border-collapse: collapse;
+}
+
+.show-posts td {
+    padding: 0 20px;
+}
+
+.post-container {
+    background-color: #fafafa;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.author-name-cell {
+    border-right: 1px solid black;
+}
+
+.thread-title-par {
+    margin-top: 10px;
+    font-size: 125%;
 }
 
 #footer {

@@ -1,32 +1,26 @@
-<p id="notice"><%= notice %></p>
-
 <p class="thread-back-reply"><%= link_to "Back to Threads", root_path %></p>
 
-<table class="border-table">
+<table class="show-posts">
   <tbody>
-    <tr>
-      <th colspan="2"><%= @forumthread.title %></th>
+    <tr class="thread-title-row">
+      <th colspan="2"><p class="thread-title-par"><%= @forumthread.title %></p></th>
     </tr>
     <% if @forumthread.initial_post.length > 0 %>
       <tr>
-        <td><%= @forumthread.user.username %></td>
-        <td>
-        <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
-          <br>
-          <br>
-          <p class="post-body"><%= @forumthread.initial_post %></p>
+        <td class="author-name-cell"><%= @forumthread.user.username %></td>
+        <td class="post-body-date-container">
+          <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
+          <div class="post-container"><p class="post-body"><%= @forumthread.initial_post %></p></div>
         </td>
         <td class="ban-thread"><%= link_to 'Ban Thread', forumthread_path, method: :delete %></td>
       </tr>
     <% end %>
     <% @forumthread.posts.each do |post| %>
       <tr>
-        <td><%= post.user.username %></td>
-        <td>
+        <td class="author-name-cell"><%= post.user.username %></td>
+        <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
-          <br>
-          <br>
-          <p class="post-body"><%= post.body %></p>
+          <div class="post-container"><p class="post-body"><%= post.body %></p></div>
         </td>
         <td class="ban-post"><%= link_to 'Ban Post', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
       </tr>
