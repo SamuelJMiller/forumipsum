@@ -97,12 +97,14 @@ div#main {
 
 #thread-title-entry input,
 #thread-initial-post-entry textarea,
-#post-body-entry textarea {
+#post-body-entry textarea,
+.form-inputs input {
     background-color: #f2f2f2;
 }
 
 #thread-submit-button input,
-#post-submit-button input {
+#post-submit-button input,
+.form-actions input {
     background-color: #f2f2f2;
     padding: 5px;
 }
@@ -115,14 +117,16 @@ div#main {
 
 .thread-links a:link,
 .thread-back-reply a:link,
-.cancel-content-create a:link {
+.cancel-content-create a:link,
+.devise-links a:link {
     color: #0693e3;
     text-decoration: none;
 }
 
 .thread-links a:hover,
 .thread-back-reply a:hover,
-.cancel-content-create a:hover {
+.cancel-content-create a:hover,
+.devise-links a:hover {
     background-color: transparent;
     color: #0c2d88;
 }
