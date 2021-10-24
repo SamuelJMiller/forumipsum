@@ -37,7 +37,7 @@
 
 body {
     background-color: #F5F5F5;
-    margin: 0;
+    margin: 0 0 50px 0;
 }
 
 #main-header {
@@ -94,24 +94,36 @@ div#main {
     text-align: center;
 }
 
-.thread-links a:link {
+.thread-links a:link,
+.thread-back-reply a:link {
     color: #0693e3;
     text-decoration: none;
 }
 
-.thread-links a:hover {
-    background-color: white;
+.thread-links a:hover,
+.thread-back-reply a:hover {
+    background-color: transparent;
     color: #0c2d88;
 }
 
-.ban-thread a:link {
+.ban-thread a:link,
+.ban-post a:link {
     color: red;
     text-decoration: none;
 }
 
-.ban-thread a:hover {
-    background-color: white;
+.ban-thread a:hover,
+.ban-post a:hover {
+    background-color: transparent;
     color: rgb(141, 51, 153);
+}
+
+.post-date-spans {
+    font-size: 85%;
+}
+
+.post-body {
+    margin-bottom: 10px;
 }
 
 .border-table {
@@ -129,4 +141,17 @@ div#main {
 
 .border-table td {
     padding: 0 25px;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
