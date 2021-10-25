@@ -11,12 +11,16 @@
       <th colspan="3"></th>
     </tr>
     <% @forumthreads.each do |forumthread| %>
-      <tr>
+      <tr class="show-thread-row">
         <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
         <td><%= forumthread.user.username %></td>
         <td><%= forumthread.replycount %></td>
-        <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
-            by <%= forumthread.posts.last.user.username %></td>
+        <% if forumthread.posts.count > 0 %>
+          <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
+              by <%= forumthread.posts.last.user.username %></td>
+        <% else %>
+          <td><p>none</p></td>
+        <% end %>
         <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
         <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
       </tr>

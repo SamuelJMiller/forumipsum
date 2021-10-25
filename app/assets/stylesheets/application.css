@@ -95,6 +95,10 @@ div#main {
     text-align: center;
 }
 
+.show-thread-row {
+    height: 36px;
+}
+
 .form-inputs input {
     margin-bottom: 10px;
 }
@@ -206,10 +210,6 @@ a[href="/users/confirmation/new"]:hover {
     padding: 10px;
     min-width: 400px;
     max-width: 400px;
-}
-
-.author-name-cell {
-    border-right: 1px solid black;
 }
 
 .thread-title-par {
