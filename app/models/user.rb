@@ -15,11 +15,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search
-      if User.find_by(username: search)
-        self.where(username: search)
-      else
-        User.all
-      end
+      self.where('username LIKE ?', "%#{search}%")
     else
       User.all
     end
