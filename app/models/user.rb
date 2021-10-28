@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :forumthreads
   has_many :posts
 
+  # User search function
   def self.search(search)
     if search
       self.where('username LIKE ?', "%#{search}%")
