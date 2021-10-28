@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
     registrations: 'users/registrations'
   }
+
+  match '/users',     to: 'users#index', via: 'get'
+  match '/users/:id', to: 'users#show',  via: 'get'
+
+  resources :users, :only => [:show]
+
   resources :forumthreads do
     resources :posts
   end
