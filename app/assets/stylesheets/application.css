@@ -70,15 +70,10 @@ body {
     color: #0c2d88;
 }
 
-#name-label {
-    margin-right: 25px;
-}
-
-#new-thread {
-    margin-right: 25px;
-}
-
-#log-in {
+#name-label,
+#new-thread,
+#log-in,
+#people-link {
     margin-right: 25px;
 }
 

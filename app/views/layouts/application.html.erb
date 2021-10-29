@@ -18,12 +18,12 @@
         <p id="log-out" class="header-right"><%= link_to "Log Out", destroy_user_session_path,
               :method => :delete %></p>
         <p id="new-thread" class="header-right"><%= link_to 'New Thread', new_forumthread_path %></p>
-        <p id="log-in" class="header-right"><%= link_to "People", users_path %></p>
+        <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
         <p id="name-label" class="header-right"><%= link_to "My Profile", user_path(current_user) %></p>
       <% else %>
         <p id="sign-up" class="header-right"><%= link_to "Sign Up", new_user_registration_path %></p>
         <p id="log-in" class="header-right"><%= link_to "Log In", new_user_session_path %></p>
-        <p id="log-in" class="header-right"><%= link_to "People", users_path %></p>
+        <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
       <% end %>
     </header>
 
