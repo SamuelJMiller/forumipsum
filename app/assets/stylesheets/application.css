@@ -218,6 +218,28 @@ a[href="/users/confirmation/new"]:hover,
     font-size: 1.25rem;
 }
 
+/* PROFILE PAGES */
+
+#my-profile-header,
+#username-header {
+    text-align: center;
+}
+
+#profile-top,
+#profile-bottom {
+    background-color: #f2f2f2;
+}
+
+#profile-top {
+    margin-top: 15px;
+}
+
+.profile-info {
+    padding: 10px;
+}
+
+/* FOOTER */
+
 #footer {
     position: fixed;
     left: 0;
