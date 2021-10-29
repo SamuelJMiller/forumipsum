@@ -1,10 +1,10 @@
 <% if @user == current_user %>
     <h1 id="my-profile-header">My Profile</h1>
     <div id="profile-top">
-        <div class="profile-info-container">
+        <div class="profile-info-container-top">
             <h3 class="profile-info">Username: <%= @user.username %></h3>
         </div>
-        <div class="profile-info-container">
+        <div class="profile-info-container-top">
             <% if @user.posts.count > 0 %>
                 <h3 class="profile-info">Latest post: <%= 
                     time_ago_in_words(@user.posts.last.created_at).gsub('about','') %> ago</h3>
@@ -16,11 +16,11 @@
 <% else %>
     <h1 id="username-header"><%= @user.username %></h1>
     <div id="profile-top">
-        <div class="profile-info-container">
+        <div class="profile-info-container-top">
             <h3 class="profile-info">Last online: <%=
                 time_ago_in_words(@user.last_sign_in_at).gsub('about','') %> ago</h3>
         </div>
-        <div class="profile-info-container">
+        <div class="profile-info-container-top">
             <% if @user.posts.count > 0 %>
                 <h3 class="profile-info">Latest post: <%= 
                     time_ago_in_words(@user.posts.last.created_at).gsub('about','') %> ago</h3>
@@ -32,5 +32,18 @@
 <% end %>
 
 <div id="profile-bottom">
-
+    <div class="profile-info-container-bottom">
+        <% if @user.forumthreads.count > 0 %>
+            <h3 class="profile-info">Threads started: <%= @user.forumthreads.count %></h3>
+        <% else %>
+            <h3 class="profile-info">Threads started: 0</h3>
+        <% end %>
+    </div>
+    <div class="profile-info-container-bottom">
+        <% if @user.posts.count > 0 %>
+            <h3 class="profile-info">Posts: <%= @user.posts.count %></h3>
+        <% else %>
+            <h3 class="profile-info">Posts: 0</h3>
+        <% end %>
+    </div>
 </div>
