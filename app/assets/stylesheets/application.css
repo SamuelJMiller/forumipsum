@@ -218,6 +218,36 @@ a[href="/users/confirmation/new"]:hover,
     font-size: 1.25rem;
 }
 
+/* USER INDEX PAGE */
+
+#users-header {
+    text-align: center;
+}
+
+#user-index-container form {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#user-index-container input {
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+
+#search-results {
+    background-color: #f2f2f2;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.search-result-tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.search-result-td {
+    text-align: center;
+}
+
 /* PROFILE PAGES */
 
 #my-profile-header,

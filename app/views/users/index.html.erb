@@ -1,10 +1,16 @@
-<h1>Users</h1>
+<div id="user-index-container">
+    <h1 id="users-header">Users</h1>
 
-<%= form_tag(users_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search]) %>
-    <%= submit_tag("Search") %>
-<% end %>
+    <%= form_tag(users_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag("Search") %>
+    <% end %>
 
-<% @users.each do |user| %>
-    <p class="user-link"><%= link_to user.username, user_path(user) %></p>
-<% end %>
+    <table id="search-results">
+        <% @users.each do |user| %>
+            <tr class="search-result-tr">
+                <td class="search-result-td"><p class="user-link"><%= link_to user.username, user_path(user) %></p></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
