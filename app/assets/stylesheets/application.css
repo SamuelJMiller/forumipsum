@@ -222,8 +222,8 @@ a[href="/users/unlock/new"]:hover,
 
 /* USER INDEX PAGE */
 
-#users-header {
-    text-align: center;
+#user-index-container {
+    width: 400px;
 }
 
 #user-index-container form {
@@ -234,6 +234,16 @@ a[href="/users/unlock/new"]:hover,
 #user-index-container input {
     background-color: #f2f2f2;
     padding: 5px;
+}
+
+#users-header {
+    text-align: center;
+}
+
+#user-search-form-container {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #search-results {

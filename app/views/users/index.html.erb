@@ -1,10 +1,12 @@
 <div id="user-index-container">
     <h1 id="users-header">Users</h1>
 
-    <%= form_tag(users_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
-        <%= submit_tag("Search") %>
-    <% end %>
+    <div id="user-search-form-container">
+        <%= form_tag(users_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag("Search") %>
+        <% end %>
+    </div>
 
     <table id="search-results">
         <% @users.each do |user| %>
