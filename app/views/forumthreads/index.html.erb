@@ -13,7 +13,7 @@
     <% @forumthreads.each do |forumthread| %>
       <tr class="show-thread-row">
         <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
-        <td><%= forumthread.user.username %></td>
+        <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
         <td><%= forumthread.replycount %></td>
         <% if forumthread.posts.count > 0 %>
           <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>

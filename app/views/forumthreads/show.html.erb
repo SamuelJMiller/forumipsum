@@ -7,7 +7,7 @@
     </tr>
     <% if @forumthread.initial_post.length > 0 %>
       <tr>
-        <td class="author-name-cell"><%= @forumthread.user.username %></td>
+        <td class="author-name-cell blue-link"><%= link_to @forumthread.user.username, user_path(@forumthread.user) %></td>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
           <div class="post-container"><p class="post-body"><%= @forumthread.initial_post %></p></div>
@@ -17,7 +17,7 @@
     <% end %>
     <% @forumthread.posts.each do |post| %>
       <tr>
-        <td class="author-name-cell"><%= post.user.username %></td>
+        <td class="author-name-cell blue-link"><%= link_to post.user.username, user_path(post.user) %></td>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
           <div class="post-container"><p class="post-body"><%= post.body %></p></div>
