@@ -34,9 +34,9 @@
 <div id="profile-bottom">
     <div class="profile-info-container-bottom">
         <% if @user.forumthreads.count > 0 %>
-            <h3 class="profile-info">Threads started: <%= @user.forumthreads.count %></h3>
+            <h3 class="profile-info profile-threads-box">Threads started: <%= @user.forumthreads.count %></h3>
         <% else %>
-            <h3 class="profile-info">Threads started: 0</h3>
+            <h3 class="profile-info profile-threads-box">Threads started: 0</h3>
         <% end %>
     </div>
     <div class="profile-info-container-bottom">
