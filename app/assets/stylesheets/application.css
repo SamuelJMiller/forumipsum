@@ -78,6 +78,7 @@ body {
 }
 
 div#main {
+    max-width: 1000px;
     background-color: white;
     display: table;
     margin-top: 15px; /* bottom margin is implemented via body bottom padding */
