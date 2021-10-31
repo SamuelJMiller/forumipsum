@@ -17,7 +17,8 @@
         <td><%= forumthread.replycount %></td>
         <% if forumthread.posts.count > 0 %>
           <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
-              by <%= forumthread.posts.last.user.username %></td>
+              by <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
+                                            user_path(forumthread.posts.last.user) %></span></td>
         <% else %>
           <td><p>none</p></td>
         <% end %>
