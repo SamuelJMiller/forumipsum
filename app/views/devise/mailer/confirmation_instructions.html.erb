@@ -1,5 +1,10 @@
-<p>Welcome <%= @resource.username %>!</p>
+<p style="text-align:center;font-weight:bold;font-size:1.2rem;">Welcome to forum ipsum, <%= @resource.username %>!</p>
 
-<p>Please validate your email address through the link below:</p>
+<p style="text-align:center;font-size:1.2rem;">Please verify your email address through the link below:</p>
 
-<p><%= link_to 'Validate my email', confirmation_url(@resource, confirmation_token: @token) %></p>
+<div style="display:table;margin-left:auto;margin-right:auto;">
+    <p style="text-align:center;font-size:1.2rem;">
+        <%= link_to 'Verify my email', confirmation_url(@resource, confirmation_token: @token),
+            style: 'text-decoration:none;padding:10px;background-color:#f2f2f2;' %>
+    </p>
+</div>
