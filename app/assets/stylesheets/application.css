@@ -138,9 +138,6 @@ div#main h2 {
 .cancel-content-create a:link,
 .devise-links a:link,
 .blue-link a:link,
-a[href="/users/sign_in"]:link,
-a[href="/users/confirmation/new"]:link,
-a[href="/users/unlock/new"]:link,
 .user-link a:link {
     color: #0693e3;
     text-decoration: none;
@@ -151,9 +148,6 @@ a[href="/users/unlock/new"]:link,
 .cancel-content-create a:hover,
 .devise-links a:hover,
 .blue-link a:hover,
-a[href="/users/sign_in"]:hover,
-a[href="/users/confirmation/new"]:hover,
-a[href="/users/unlock/new"]:hover,
 .user-link a:hover {
     background-color: transparent;
     color: #0c2d88;
