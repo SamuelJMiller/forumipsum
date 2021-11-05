@@ -298,6 +298,12 @@ div#main h2 {
     border-right: 0
 }
 
+/* ADDITIONAL FORM STYLING */
+
+.form-header {
+    text-align: center;
+}
+
 /* FOOTER */
 
 #footer {
