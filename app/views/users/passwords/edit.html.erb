@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<h2 class="form-header">Change your password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -11,7 +11,6 @@
                 label: "New password",
                 required: true,
                 autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 label: "Confirm your new password",
@@ -24,4 +23,6 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<div class="devise-links">
+  <%= render "users/shared/links" %>
+</div>
