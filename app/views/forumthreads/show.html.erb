@@ -4,6 +4,9 @@
   <tbody>
     <tr class="thread-title-row">
       <th colspan="2"><p class="thread-title-par"><%= @forumthread.title %></p></th>
+      <% if current_user and current_user.role > 0 %>
+        <th>Actions</th>
+      <% end %>
     </tr>
     <% if @forumthread.initial_post.length > 0 %>
       <tr>
@@ -12,7 +15,9 @@
           <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
           <div class="post-container"><p class="post-body"><%= @forumthread.initial_post %></p></div>
         </td>
-        <td class="ban-thread"><%= link_to 'Ban Thread', forumthread_path, method: :delete %></td>
+        <% if current_user and current_user.role > 0 %>
+          <td class="ban-thread"><%= link_to 'Ban Thread', forumthread_path, method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
     <% @forumthread.posts.each do |post| %>
@@ -22,7 +27,9 @@
           <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
           <div class="post-container"><p class="post-body"><%= post.body %></p></div>
         </td>
-        <td class="ban-post"><%= link_to 'Ban Post', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
+        <% if current_user and current_user.role > 0 %>
+          <td class="ban-post"><%= link_to 'Ban Post', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
