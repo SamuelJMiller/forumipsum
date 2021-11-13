@@ -260,8 +260,13 @@ div#main h2 {
 /* PROFILE PAGES */
 
 #my-profile-header,
-#username-header {
+#username-header,
+#rank-header {
     text-align: center;
+}
+
+#rank-header {
+    margin-top: 15px;
 }
 
 #profile-top,

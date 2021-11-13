@@ -1,5 +1,12 @@
 <% if @user == current_user %>
     <h1 id="my-profile-header">My Profile</h1>
+    <% if current_user and current_user.role == 1 %>
+        <h3 id="rank-header">(Moderator)</h3>
+    <% elsif current_user and current_user.role == 2 %>
+        <h3 id="rank-header">(Administrator)</h3>
+    <% elsif current_user and current_user.role == 3 %>
+        <h3 id="rank-header">(Supreme Emperor)</h3>
+    <% end %>
     <div id="profile-top">
         <div class="profile-info-container-top">
             <h3 class="profile-info">Username: <%= @user.username %></h3>
@@ -15,6 +22,13 @@
     </div>
 <% else %>
     <h1 id="username-header"><%= @user.username %></h1>
+    <% if @user.role == 1 %>
+        <h3 id="rank-header">(Moderator)</h3>
+    <% elsif @user.role == 2 %>
+        <h3 id="rank-header">(Administrator)</h3>
+    <% elsif @user.role == 3 %>
+        <h3 id="rank-header">(Supreme Emperor)</h3>
+    <% end %>
     <div id="profile-top">
         <div class="profile-info-container-top">
             <h3 class="profile-info">Last online: <%=
