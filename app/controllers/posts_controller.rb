@@ -63,11 +63,6 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to forumthread_posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
   end
 
   private
@@ -94,8 +89,12 @@ class PostsController < ApplicationController
 
     def authorize_destroy
       # Only Mod+ can delete posts
-      unless @post.user.role > 0
+      if @post.user.role == 0
         flash[:notice] = "You do not have permission to delete posts."
+        redirect_to forumthread_posts_url
+      else
+        ban_post
+        flash[:notice] = "Successfully banned post."
         redirect_to forumthread_posts_url
       end
     end
@@ -103,5 +102,11 @@ class PostsController < ApplicationController
     def redirect_to_thread
       # Redirect to thread page instead of showing post or post index
       redirect_to forumthread_url(params[:forumthread_id])
+    end
+
+    # Set post to banned
+    def ban_post
+      @post.is_banned = true
+      @post.save
     end
 end

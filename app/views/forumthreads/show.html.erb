@@ -25,9 +25,17 @@
         <td class="author-name-cell blue-link"><%= link_to post.user.username, user_path(post.user) %></td>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
-          <div class="post-container"><p class="post-body"><%= post.body %></p></div>
+          <% if post.is_banned == false %>
+            <div class="post-container">
+              <p class="post-body"><%= post.body %></p>
+            </div>
+          <% else %>
+            <div class="post-container">
+              <p class="post-body">[Content Deleted]</p>
+            </div>
+          <% end %>
         </td>
-        <% if current_user and current_user.role > 0 %>
+        <% if current_user and current_user.role > 0 and post.is_banned == false %>
           <td class="ban-post"><%= link_to 'Ban Post', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
         <% end %>
       </tr>
