@@ -13,22 +13,24 @@
       <% end %>
     </tr>
     <% @forumthreads.each do |forumthread| %>
-      <tr class="show-thread-row">
-        <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
-        <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
-        <td><%= forumthread.replycount %></td>
-        <% if forumthread.posts.count > 0 %>
-          <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
-              by <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
-                                            user_path(forumthread.posts.last.user) %></span></td>
-        <% else %>
-          <td><p>none</p></td>
-        <% end %>
-        <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
-        <% if current_user and current_user.role > 0 %>
-          <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
-        <% end %>
-      </tr>
+      <% if forumthread.is_banned == false %>
+        <tr class="show-thread-row">
+          <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
+          <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
+          <td><%= forumthread.replycount %></td>
+          <% if forumthread.posts.count > 0 %>
+            <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
+                by <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
+                                              user_path(forumthread.posts.last.user) %></span></td>
+          <% else %>
+            <td><p>none</p></td>
+          <% end %>
+          <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
+          <% if current_user and current_user.role > 0 %>
+            <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
+          <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

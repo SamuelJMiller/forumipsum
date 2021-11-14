@@ -53,11 +53,6 @@ class ForumthreadsController < ApplicationController
 
   # DELETE /forumthreads/1 or /forumthreads/1.json
   def destroy
-    @forumthread.destroy
-    respond_to do |format|
-      format.html { redirect_to forumthreads_url, notice: "Forumthread was successfully destroyed." }
-      format.json { head :no_content }
-    end
   end
 
   private
@@ -84,9 +79,19 @@ class ForumthreadsController < ApplicationController
 
     def authorize_destroy
       # Only Mod+ can delete threads
-      unless @forumthread.user.role > 0
+      if @forumthread.user.role == 0
         flash[:notice] = "You do not have permission to delete threads."
         redirect_to root_path
+      else
+        ban_thread
+        flash[:notice] = "Banned thread #{@forumthread.title}."
+        redirect_to root_path
       end
+    end
+
+    # Set thread to banned
+    def ban_thread
+      @forumthread.is_banned = true
+      @forumthread.save
     end
 end
