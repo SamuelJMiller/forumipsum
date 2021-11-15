@@ -16,12 +16,24 @@
       <% if forumthread.is_banned == false %>
         <tr class="show-thread-row">
           <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
-          <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
+          <% if forumthread.user.is_banned == false %>
+            <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
+          <% else %>
+            <td class="banned-user-link"><%= forumthread.user.username %></td>
+          <% end %>
           <td><%= forumthread.replycount %></td>
           <% if forumthread.posts.count > 0 %>
             <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
-                by <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
-                                              user_path(forumthread.posts.last.user) %></span></td>
+                by
+                <% if forumthread.posts.last.user.is_banned == false %>
+                  <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
+                                              user_path(forumthread.posts.last.user) %></span>
+                <% else %>
+                  <span class="banned-user-link">
+                    <%= forumthread.posts.last.user.username %>
+                  </span>
+                <% end %>
+            </td>
           <% else %>
             <td><p>none</p></td>
           <% end %>

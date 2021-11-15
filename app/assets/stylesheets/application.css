@@ -263,6 +263,10 @@ div#main h2 {
     text-align: center;
 }
 
+.banned-user-result {
+    text-decoration: line-through;
+}
+
 /* PROFILE PAGES */
 
 #my-profile-header,
@@ -271,8 +275,13 @@ div#main h2 {
     text-align: center;
 }
 
-.banned-username-header {
+.banned-username-header,
+.banned-user-link {
     text-decoration: line-through;
+}
+
+.banned-user-link {
+    font-weight: bold;
 }
 
 #rank-header {

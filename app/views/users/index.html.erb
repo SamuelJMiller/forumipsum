@@ -11,7 +11,11 @@
     <table id="search-results">
         <% @users.each do |user| %>
             <tr class="search-result-tr">
-                <td class="search-result-td"><p class="user-link"><%= link_to user.username, user_path(user) %></p></td>
+                <% if user.is_banned == false %>
+                    <td class="search-result-td"><p class="user-link"><%= link_to user.username, user_path(user) %></p></td>
+                <% else %>
+                    <td class="search-result-td"><p class="user-link banned-user-result"><%= link_to user.username, user_path(user) %></p></td>
+                <% end %>
             </tr>
         <% end %>
     </table>
