@@ -9,33 +9,36 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <% if current_user and current_user.is_banned == true %>
+    <h1 id="banned-header">You have been BANNED for abuse of the platform.</h1>
+  <% else %>
+    <body>
+      <header id="main-header" class="clearfix">
+        <h1 id="main-header-link"><%= link_to "forum ipsum", root_path %></h1>
+        
+        <% if user_signed_in? %>
+          <p id="log-out" class="header-right"><%= link_to "Log Out", destroy_user_session_path,
+                :method => :delete %></p>
+          <p id="new-thread" class="header-right"><%= link_to 'New Thread', new_forumthread_path %></p>
+          <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
+          <p id="name-label" class="header-right"><%= link_to "My Profile", user_path(current_user) %></p>
+        <% else %>
+          <p id="sign-up" class="header-right"><%= link_to "Sign Up", new_user_registration_path %></p>
+          <p id="log-in" class="header-right"><%= link_to "Log In", new_user_session_path %></p>
+          <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
+        <% end %>
+      </header>
 
-    <header id="main-header" class="clearfix">
-      <h1 id="main-header-link"><%= link_to "forum ipsum", root_path %></h1>
-      
-      <% if user_signed_in? %>
-        <p id="log-out" class="header-right"><%= link_to "Log Out", destroy_user_session_path,
-              :method => :delete %></p>
-        <p id="new-thread" class="header-right"><%= link_to 'New Thread', new_forumthread_path %></p>
-        <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
-        <p id="name-label" class="header-right"><%= link_to "My Profile", user_path(current_user) %></p>
-      <% else %>
-        <p id="sign-up" class="header-right"><%= link_to "Sign Up", new_user_registration_path %></p>
-        <p id="log-in" class="header-right"><%= link_to "Log In", new_user_session_path %></p>
-        <p id="people-link" class="header-right"><%= link_to "People", users_path %></p>
-      <% end %>
-    </header>
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
 
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
+      <div id="main">
+        <%= yield %>
+      </div>
 
-    <div id="main">
-      <%= yield %>
-    </div>
-
-    <div id="footer">
-      <p id="footer-text">&copy; 2021 Samuel Miller</p>
-    </div>
-  </body>
+      <div id="footer">
+        <p id="footer-text">&copy; 2021 Samuel Miller</p>
+      </div>
+    </body>
+  <% end %>
 </html>

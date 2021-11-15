@@ -35,6 +35,10 @@
     clear: both;
 }
 
+#banned-header {
+    text-align: center;
+}
+
 body {
     background-color: #F5F5F5;
     margin: 0 0 50px 0;
@@ -154,13 +158,15 @@ div#main h2 {
 }
 
 .ban-thread a:link,
-.ban-post a:link {
+.ban-post a:link,
+.ban-user a:link {
     color: red;
     text-decoration: none;
 }
 
 .ban-thread a:hover,
-.ban-post a:hover {
+.ban-post a:hover,
+.ban-user a:hover {
     background-color: transparent;
     color: rgb(141, 51, 153);
 }
