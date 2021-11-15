@@ -21,7 +21,11 @@
         </div>
     </div>
 <% else %>
-    <h1 id="username-header"><%= @user.username %></h1>
+    <% if @user.is_banned == false %>
+        <h1 id="username-header"><%= @user.username %></h1>
+    <% else %>
+        <h1 id="username-header" class="banned-username-header"><%= @user.username %></h1>
+    <% end %>
     <% if @user.role == 1 %>
         <h3 id="rank-header">(Moderator)</h3>
     <% elsif @user.role == 2 %>
@@ -61,3 +65,12 @@
         <% end %>
     </div>
 </div>
+
+<% if current_user and @user != current_user and current_user.role > 1 %>
+    <div id="admin-actions">
+        <h2 id="admin-actions-header">Actions</h3>
+        <div id="admin-action-links">
+            <%= link_to "Ban", user_path(@user), method: :delete %>
+        </div>
+    </div>
+<% end %>

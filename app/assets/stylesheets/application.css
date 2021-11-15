@@ -265,6 +265,10 @@ div#main h2 {
     text-align: center;
 }
 
+.banned-username-header {
+    text-decoration: line-through;
+}
+
 #rank-header {
     margin-top: 15px;
 }

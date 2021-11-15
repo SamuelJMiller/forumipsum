@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   match '/users',     to: 'users#index', via: 'get'
   match '/users/:id', to: 'users#show',  via: 'get'
 
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :destroy]
 
   resources :forumthreads do
     resources :posts
