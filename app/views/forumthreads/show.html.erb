@@ -17,7 +17,9 @@
         <% end %>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
-          <div class="post-container"><p class="post-body"><%= @forumthread.initial_post %></p></div>
+          <div class="post-container initial-post-container">
+            <p class="post-body"><%= @forumthread.initial_post %></p>
+          </div>
         </td>
         <% if current_user and current_user.role > 0 %>
           <td class="ban-thread"><%= link_to 'Ban Thread', forumthread_path, method: :delete %></td>

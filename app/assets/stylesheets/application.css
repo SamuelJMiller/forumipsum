@@ -171,6 +171,10 @@ div#main h2 {
     color: rgb(141, 51, 153);
 }
 
+.initial-post-container {
+    border: 3px solid gray;
+}
+
 .post-date-spans {
     font-size: 85%;
 }
