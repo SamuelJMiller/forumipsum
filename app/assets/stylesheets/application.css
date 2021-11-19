@@ -327,6 +327,12 @@ div#main h2 {
     text-align: center;
 }
 
+#admin-action-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 /* ADDITIONAL FORM STYLING */
 
 .form-header {
