@@ -71,6 +71,8 @@
         <h2 id="admin-actions-header">Actions</h3>
         <div id="admin-action-links">
             <p class="ban-user"><%= link_to "Ban", user_path(@user), method: :delete %></p>
+            <p class="blue-link"><%= link_to "Promote", promote_user_path(@user) %></p>
+            <p class="blue-link"><%= link_to "Demote", demote_user_path(@user) %></p>
         </div>
     </div>
 <% end %>

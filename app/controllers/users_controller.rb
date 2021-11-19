@@ -14,6 +14,21 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  # Promote/demote user roles
+  def promote_user
+    @user = User.find(params[:id])
+    @user.role += 1
+    @user.save
+    redirect_to user_path(@user)
+  end
+
+  def demote_user
+    @user = User.find(params[:id])
+    @user.role -= 1
+    @user.save
+    redirect_to user_path(@user)
+  end
+
   protected
 
   def update_last_sign_in_at
