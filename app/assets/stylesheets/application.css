@@ -159,14 +159,18 @@ div#main h2 {
 
 .ban-thread a:link,
 .ban-post a:link,
-.ban-user a:link {
+.ban-user a:link,
+.report-post a:link,
+.report-thread a:link {
     color: red;
     text-decoration: none;
 }
 
 .ban-thread a:hover,
 .ban-post a:hover,
-.ban-user a:hover {
+.ban-user a:hover,
+.report-post a:hover,
+.report-thread a:hover {
     background-color: transparent;
     color: rgb(141, 51, 153);
 }

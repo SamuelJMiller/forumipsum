@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  match '/forumthreads/:forumthread_id/posts/:id/report', via: 'get', to: 'posts#report', as: :report_post
+  match '/forumthreads/:id/report', via: 'get', to: 'forumthreads#report', as: :report_forumthread
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'forumthreads#index'
 end

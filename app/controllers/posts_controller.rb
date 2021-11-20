@@ -65,6 +65,15 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  # Increment report weight on post
+  def report
+    @post = Post.find(params[:id])
+    @post.report_weight += 1
+    @post.save
+    flash[:notice] = "Reported post #{@post.title}."
+    redirect_to forumthread_path(@post.forumthread.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
