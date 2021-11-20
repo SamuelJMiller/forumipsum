@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_042636) do
+ActiveRecord::Schema.define(version: 2021_11_20_182123) do
 
   create_table "forumthreads", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_20_042636) do
     t.integer "user_id"
     t.boolean "is_banned", default: false
     t.text "initial_post"
+    t.integer "report_weight", default: 0
   end
 
   create_table "posts", force: :cascade do |t|
