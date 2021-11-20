@@ -4,9 +4,6 @@
   <tbody>
     <tr class="thread-title-row">
       <th colspan="2"><p class="thread-title-par"><%= @forumthread.title %></p></th>
-      <% if current_user and current_user.role > 0 %>
-        <th>Actions</th>
-      <% end %>
     </tr>
     <% if @forumthread.initial_post.length > 0 %>
       <tr>
@@ -21,9 +18,6 @@
             <p class="post-body"><%= @forumthread.initial_post %></p>
           </div>
         </td>
-        <% if current_user and current_user.role > 0 %>
-          <td class="ban-thread"><%= link_to 'Ban Thread', forumthread_path, method: :delete %></td>
-        <% end %>
       </tr>
     <% end %>
     <% @forumthread.posts.each do |post| %>
@@ -38,7 +32,12 @@
           <% if post.is_banned == false %>
             <div class="post-container">
               <p class="post-body"><%= post.body %></p>
-              <p class="report-post"><%= link_to 'Report', report_post_path(@forumthread, post) %></p>
+              <% if current_user and current_user.role == 0 %>
+                <p class="report-post"><%= link_to 'Report', report_post_path(@forumthread, post) %></p>
+              <% elsif current_user and current_user.role > 0 %>
+                <p class="report-post"><%= link_to 'Ban', forumthread_post_path(@forumthread, post),
+                    method: :delete %></p>
+              <% end %>
             </div>
           <% else %>
             <div class="post-container">
@@ -46,9 +45,6 @@
             </div>
           <% end %>
         </td>
-        <% if current_user and current_user.role > 0 and post.is_banned == false %>
-          <td class="ban-post"><%= link_to 'Ban Post', forumthread_post_path(post.forumthread.id, post), method: :delete %></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
