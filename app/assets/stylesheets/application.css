@@ -179,8 +179,16 @@ div#main h2 {
     border: 3px solid gray;
 }
 
-.post-date-spans {
+.post-date-spans,
+.report-post {
     font-size: 85%;
+}
+
+.report-post {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    visibility: hidden;
 }
 
 .post-body {
@@ -220,6 +228,11 @@ div#main h2 {
     padding: 10px;
     min-width: 400px;
     max-width: 400px;
+    position: relative;
+}
+
+.post-container:hover .report-post {
+    visibility: visible;
 }
 
 .thread-title-par {

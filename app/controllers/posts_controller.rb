@@ -70,7 +70,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.report_weight += 1
     @post.save
-    flash[:notice] = "Reported post #{@post.title}."
+    flash[:notice] = "Reported post."
     redirect_to forumthread_path(@post.forumthread.id)
   end
 

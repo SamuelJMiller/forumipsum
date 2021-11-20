@@ -38,6 +38,7 @@
           <% if post.is_banned == false %>
             <div class="post-container">
               <p class="post-body"><%= post.body %></p>
+              <p class="report-post"><%= link_to 'Report', report_post_path(@forumthread, post) %></p>
             </div>
           <% else %>
             <div class="post-container">
