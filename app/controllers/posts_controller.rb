@@ -74,6 +74,14 @@ class PostsController < ApplicationController
     redirect_to forumthread_path(@post.forumthread.id)
   end
 
+  def reset_reports
+    @post = Post.find(params[:id])
+    @post.report_weight = 0
+    @post.save
+    flash[:notice] = "Reset reports on post."
+    redirect_to request.referrer
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

@@ -63,6 +63,14 @@ class ForumthreadsController < ApplicationController
     redirect_to root_path
   end
 
+  def reset_reports
+    @forumthread = Forumthread.find(params[:id])
+    @forumthread.report_weight = 0
+    @forumthread.save
+    flash[:notice] = "Reset reports on #{@forumthread.title}."
+    redirect_to request.referrer
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_forumthread

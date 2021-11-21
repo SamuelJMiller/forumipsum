@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   end
 
   match '/forumthreads/:forumthread_id/posts/:id/report', via: 'get', to: 'posts#report', as: :report_post
+  match '/forumthreads/:forumthread_id/posts/:id/reset_reports', via: 'get', to: 'posts#reset_reports',
+        as: :post_reset_reports
   match '/forumthreads/:id/report', via: 'get', to: 'forumthreads#report', as: :report_forumthread
+  match '/forumthreads/:id/reset_reports', via: 'get', to: 'forumthreads#reset_reports',
+        as: :forumthread_reset_reports
 
   match '/admin', to: 'admin#index', via: 'get', as: :admin
 
