@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   match '/forumthreads/:forumthread_id/posts/:id/report', via: 'get', to: 'posts#report', as: :report_post
   match '/forumthreads/:id/report', via: 'get', to: 'forumthreads#report', as: :report_forumthread
 
+  match '/admin', to: 'admin#index', via: 'get', as: :admin
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'forumthreads#index'
 end
