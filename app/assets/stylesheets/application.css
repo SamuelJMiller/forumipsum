@@ -360,6 +360,18 @@ div#main h2 {
     text-align: center;
 }
 
+/* ADMIN PANEL */
+
+#threads-reported,
+#posts-reported {
+    margin-top: 15px;
+}
+
+#threads-reported-header,
+#posts-reported-header {
+    text-align: center;
+}
+
 /* FOOTER */
 
 #footer {

@@ -89,11 +89,11 @@ class ForumthreadsController < ApplicationController
       # Only Mod+ can delete threads
       if @forumthread.user.role == 0
         flash[:notice] = "You do not have permission to delete threads."
-        redirect_to root_path
+        redirect_to request.referrer
       else
         ban_thread
         flash[:notice] = "Banned thread #{@forumthread.title}."
-        redirect_to root_path
+        redirect_to request.referrer
       end
     end
 

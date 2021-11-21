@@ -100,11 +100,11 @@ class PostsController < ApplicationController
       # Only Mod+ can delete posts
       if @post.user.role == 0
         flash[:notice] = "You do not have permission to delete posts."
-        redirect_to forumthread_posts_url
+        redirect_to request.referrer
       else
         ban_post
         flash[:notice] = "Successfully banned post."
-        redirect_to forumthread_posts_url
+        redirect_to request.referrer
       end
     end
 
