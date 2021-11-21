@@ -48,7 +48,10 @@
                             <td><p>none</p></td>
                         <% end %>
                         <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
-                        <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
+                        <td class="ban-thread">
+                            <%= link_to 'Ban', forumthread, method: :delete %> &middot; 
+                            <%= link_to 'Reset', forumthread_reset_reports_path(forumthread) %>
+                        </td>
                         </tr>
                     <% end %>
                 <% end %>
@@ -78,7 +81,8 @@
                                 <div class="post-container">
                                     <p class="post-body"><%= post.body %></p>
                                     <p class="report-post"><%= link_to 'Ban', forumthread_post_path(post.forumthread, post),
-                                        method: :delete %></p>
+                                        method: :delete %> &middot; 
+                                        <%= link_to 'Reset', post_reset_reports_path(post.forumthread, post) %></p>
                                 </div>
                             </td>
                         </tr>

@@ -43,7 +43,7 @@
           <% end %>
           <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
           <% if current_user and current_user.role > 0 %>
-            <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
+            <td class="ban-thread"><%= link_to 'Ban', forumthread, method: :delete %></td>
           <% elsif current_user and current_user.role == 0 %>
             <td class="report-thread"><%= link_to 'Report', report_forumthread_path(forumthread.id) %></td>
           <% end %>
