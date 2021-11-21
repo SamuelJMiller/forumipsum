@@ -6,9 +6,40 @@
     <div id="threads-reported">
         <h2 id="threads-reported-header">Threads Reported</h2>
 
-        <% @forumthreads.each do |forumthread| %>
-            <p><%= forumthread.title %>, <%= forumthread.report_weight %></p>
-        <% end %>
+        <table class="border-table">
+            <tbody>
+                <% @forumthreads.each do |forumthread| %>
+                    <% if forumthread.is_banned == false %>
+                        <tr class="show-thread-row">
+                        <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
+                        <% if forumthread.user.is_banned == false %>
+                            <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
+                        <% else %>
+                            <td class="banned-user-link"><%= forumthread.user.username %></td>
+                        <% end %>
+                        <td><%= forumthread.replycount %></td>
+                        <% if forumthread.posts.count > 0 %>
+                            <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
+                                by
+                                <% if forumthread.posts.last.user.is_banned == false %>
+                                <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
+                                                            user_path(forumthread.posts.last.user) %></span>
+                                <% else %>
+                                <span class="banned-user-link">
+                                    <%= forumthread.posts.last.user.username %>
+                                </span>
+                                <% end %>
+                            </td>
+                        <% else %>
+                            <td><p>none</p></td>
+                        <% end %>
+                        <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
+                        <td class="ban-thread"><%= link_to 'Ban Thread', forumthread, method: :delete %></td>
+                        </tr>
+                    <% end %>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 
     <div id="posts-reported">
