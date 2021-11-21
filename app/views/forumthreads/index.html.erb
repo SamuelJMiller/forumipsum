@@ -1,5 +1,9 @@
 <h1 id="threads-header">Threads</h1>
 
+<% if current_user and current_user.role > 0 %>
+  <p id="homepage-admin-link"><%= link_to 'Enforcement', admin_path %></p>
+<% end %>
+
 <table class="border-table">
   <tbody>
     <tr>

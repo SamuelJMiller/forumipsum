@@ -366,7 +366,8 @@ div#main h2 {
 #threads-reported-header,
 #posts-reported-header,
 #no-reported-threads,
-#no-reported-posts {
+#no-reported-posts,
+#homepage-admin-link {
     text-align: center;
 }
 
@@ -379,6 +380,22 @@ div#main h2 {
 #posts-reported-table {
     margin-right: auto;
     margin-left: auto;
+}
+
+#homepage-admin-link {
+    margin-top: 15px;
+}
+
+#homepage-admin-link a {
+    text-decoration: none;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+
+#homepage-admin-link a:hover {
+    text-decoration: none;
+    background-color: #e9e9e9;
+    color: black;
 }
 
 /* FOOTER */
