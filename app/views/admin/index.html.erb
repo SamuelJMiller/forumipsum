@@ -6,8 +6,22 @@
     <div id="threads-reported">
         <h2 id="threads-reported-header">Threads Reported</h2>
 
-        <table class="border-table">
+        <% if @forumthreads.count == 0 %>
+            <p id="no-reported-threads">Nothing here!</p>
+        <% end %>
+
+        <table id="threads-reported-table" class="border-table">
             <tbody>
+                <% if @forumthreads.count > 0 %>
+                    <tr>
+                        <th>Title</th>
+                        <th>User</th>
+                        <th>Replies</th>
+                        <th>Latest reply</th>
+                        <th>Created</th>
+                        <th colspan="3">Actions</th>
+                    </tr>
+                <% end %>
                 <% @forumthreads.each do |forumthread| %>
                     <% if forumthread.is_banned == false %>
                         <tr class="show-thread-row">
@@ -45,7 +59,11 @@
     <div id="posts-reported">
         <h2 id="posts-reported-header">Posts Reported</h2>
 
-        <table class="show-posts">
+        <% if @posts.count == 0 %>
+            <p id="no-reported-posts">Nothing here!</p>
+        <% end %>
+
+        <table id="posts-reported-table" class="show-posts">
             <tbody>
                 <% @posts.each do |post| %>
                     <% if post.is_banned == false %>

@@ -362,14 +362,23 @@ div#main h2 {
 
 /* ADMIN PANEL */
 
+#admin-header,
+#threads-reported-header,
+#posts-reported-header,
+#no-reported-threads,
+#no-reported-posts {
+    text-align: center;
+}
+
 #threads-reported,
 #posts-reported {
     margin-top: 15px;
+    min-width: 400px;
 }
 
-#threads-reported-header,
-#posts-reported-header {
-    text-align: center;
+#posts-reported-table {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* FOOTER */
