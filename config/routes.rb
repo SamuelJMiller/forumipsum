@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   match '/users/:id/promote', to: 'users#promote_user', via: 'get', as: :promote_user
   match '/users/:id/demote',  to: 'users#demote_user',  via: 'get', as: :demote_user
+  match '/users/:id/unban',   to: 'users#unban_user',   via: 'get', as: :unban_user
   match '/users/:id',         to: 'users#show',         via: 'get'
   match '/users',             to: 'users#index',        via: 'get'
 

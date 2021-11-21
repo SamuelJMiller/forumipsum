@@ -29,6 +29,13 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def unban_user
+    @user = User.find(params[:id])
+    @user.is_banned = false
+    @user.save
+    redirect_to user_path(@user)
+  end
+
   protected
 
   def update_last_sign_in_at
