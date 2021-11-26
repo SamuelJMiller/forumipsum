@@ -99,12 +99,20 @@ div#main {
     height: 36px;
 }
 
-.category-header {
+.category-header-container {
+    position: relative;
     text-align: center;
     color: white;
     background-color: rgb(0, 0, 194);
     margin-top: 15px;
     padding: 5px;
+}
+
+.category-show-button {
+    position: absolute;
+    right: 5px;
+    bottom: 6px;
+    color: white;
 }
 
 .thread-links {

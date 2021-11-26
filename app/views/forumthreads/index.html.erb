@@ -5,7 +5,10 @@
 <% end %>
 
 <% @categories.each do |cat| %>
-  <tr><h3 class="category-header"><%= cat.name %></h3></tr>
+  <div class="category-header-container">
+    <h3 class="category-header"><%= cat.name %></h3>
+    <p class="category-show-button">show</p>
+  </div>
   <% if @forumthreads.where("category == ?", cat.name).count > 0 %>
     <table class="border-table">
       <tbody>
