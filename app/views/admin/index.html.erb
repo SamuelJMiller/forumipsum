@@ -10,53 +10,55 @@
             <p id="no-reported-threads">Nothing here!</p>
         <% end %>
 
-        <table id="threads-reported-table" class="border-table">
-            <tbody>
-                <% if @forumthreads.count > 0 %>
-                    <tr>
-                        <th>Title</th>
-                        <th>User</th>
-                        <th>Replies</th>
-                        <th>Latest reply</th>
-                        <th>Created</th>
-                        <th colspan="3">Actions</th>
-                    </tr>
-                <% end %>
-                <% @forumthreads.each do |forumthread| %>
-                    <% if forumthread.is_banned == false %>
-                        <tr class="show-thread-row">
-                        <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
-                        <% if forumthread.user.is_banned == false %>
-                            <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
-                        <% else %>
-                            <td class="banned-user-link"><%= forumthread.user.username %></td>
-                        <% end %>
-                        <td><%= forumthread.replycount %></td>
-                        <% if forumthread.posts.count > 0 %>
-                            <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
-                                by
-                                <% if forumthread.posts.last.user.is_banned == false %>
-                                <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
-                                                            user_path(forumthread.posts.last.user) %></span>
-                                <% else %>
-                                <span class="banned-user-link">
-                                    <%= forumthread.posts.last.user.username %>
-                                </span>
-                                <% end %>
-                            </td>
-                        <% else %>
-                            <td><p>none</p></td>
-                        <% end %>
-                        <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
-                        <td class="ban-thread">
-                            <%= link_to 'Ban', forumthread, method: :delete %> &middot; 
-                            <%= link_to 'Reset', forumthread_reset_reports_path(forumthread) %>
-                        </td>
+        <% if @forumthreads.count > 0 %>
+            <table id="threads-reported-table" class="border-table">
+                <tbody>
+                    <% if @forumthreads.count > 0 %>
+                        <tr>
+                            <th>Title</th>
+                            <th>User</th>
+                            <th>Replies</th>
+                            <th>Latest reply</th>
+                            <th>Created</th>
+                            <th colspan="3">Actions</th>
                         </tr>
                     <% end %>
-                <% end %>
-            </tbody>
-        </table>
+                    <% @forumthreads.each do |forumthread| %>
+                        <% if forumthread.is_banned == false %>
+                            <tr class="show-thread-row">
+                            <td class="thread-links"><%= link_to forumthread.title, forumthread %></td>
+                            <% if forumthread.user.is_banned == false %>
+                                <td class="blue-link"><%= link_to forumthread.user.username, user_path(forumthread.user) %></td>
+                            <% else %>
+                                <td class="banned-user-link"><%= forumthread.user.username %></td>
+                            <% end %>
+                            <td><%= forumthread.replycount %></td>
+                            <% if forumthread.posts.count > 0 %>
+                                <td><%= time_ago_in_words(forumthread.posts.last.created_at).gsub('about','') %> ago<br>
+                                    by
+                                    <% if forumthread.posts.last.user.is_banned == false %>
+                                    <span class="blue-link"><%= link_to forumthread.posts.last.user.username,
+                                                                user_path(forumthread.posts.last.user) %></span>
+                                    <% else %>
+                                    <span class="banned-user-link">
+                                        <%= forumthread.posts.last.user.username %>
+                                    </span>
+                                    <% end %>
+                                </td>
+                            <% else %>
+                                <td><p>none</p></td>
+                            <% end %>
+                            <td><%= time_ago_in_words(forumthread.created_at).gsub('about','') %> ago</td>
+                            <td class="ban-thread">
+                                <%= link_to 'Ban', forumthread, method: :delete %> &middot; 
+                                <%= link_to 'Reset', forumthread_reset_reports_path(forumthread) %>
+                            </td>
+                            </tr>
+                        <% end %>
+                    <% end %>
+                </tbody>
+            </table>
+        <% end %>
     </div>
 
     <div id="posts-reported">
@@ -66,29 +68,31 @@
             <p id="no-reported-posts">Nothing here!</p>
         <% end %>
 
-        <table id="posts-reported-table" class="show-posts">
-            <tbody>
-                <% @posts.each do |post| %>
-                    <% if post.is_banned == false %>
-                        <tr>
-                            <% if post.user.is_banned == false %>
-                                <td class="author-name-cell blue-link"><%= link_to post.user.username, user_path(post.user) %></td>
-                            <% else %>
-                                <td class="banned-user-link"><%= post.user.username %></td>
-                            <% end %>
-                            <td class="post-body-date-container">
-                                <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
-                                <div class="post-container">
-                                    <p class="post-body"><%= post.body %></p>
-                                    <p class="report-post"><%= link_to 'Ban', forumthread_post_path(post.forumthread, post),
-                                        method: :delete %> &middot; 
-                                        <%= link_to 'Reset', post_reset_reports_path(post.forumthread, post) %></p>
-                                </div>
-                            </td>
-                        </tr>
+        <% if @posts.count > 0 %>
+            <table id="posts-reported-table" class="show-posts">
+                <tbody>
+                    <% @posts.each do |post| %>
+                        <% if post.is_banned == false %>
+                            <tr>
+                                <% if post.user.is_banned == false %>
+                                    <td class="author-name-cell blue-link"><%= link_to post.user.username, user_path(post.user) %></td>
+                                <% else %>
+                                    <td class="banned-user-link"><%= post.user.username %></td>
+                                <% end %>
+                                <td class="post-body-date-container">
+                                    <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>
+                                    <div class="post-container">
+                                        <p class="post-body"><%= post.body %></p>
+                                        <p class="report-post"><%= link_to 'Ban', forumthread_post_path(post.forumthread, post),
+                                            method: :delete %> &middot; 
+                                            <%= link_to 'Reset', post_reset_reports_path(post.forumthread, post) %></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
                     <% end %>
-                <% end %>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        <% end %>
     </div>
 <% end %>

@@ -107,6 +107,10 @@ div#main {
     padding: 5px;
 }
 
+.thread-links {
+    width: 200px;
+}
+
 .form-inputs input {
     margin-bottom: 10px;
 }
@@ -205,6 +209,7 @@ div#main h2 {
 
 .border-table {
     border-collapse: collapse;
+    width: 750px;
 }
 
 .border-table tr:nth-child(even) {
