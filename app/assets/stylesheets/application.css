@@ -113,6 +113,7 @@ div#main {
     right: 5px;
     bottom: 6px;
     color: white;
+    cursor: pointer;
 }
 
 .thread-links {
