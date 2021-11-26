@@ -6,6 +6,7 @@ class ForumthreadsController < ApplicationController
 
   # GET /forumthreads or /forumthreads.json
   def index
+    @categories = Category.all
     @forumthreads = Forumthread.all
   end
 
