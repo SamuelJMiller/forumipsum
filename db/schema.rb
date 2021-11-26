@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_182123) do
+ActiveRecord::Schema.define(version: 2021_11_26_170250) do
 
   create_table "forumthreads", force: :cascade do |t|
     t.string "title"
