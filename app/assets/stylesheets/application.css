@@ -123,6 +123,17 @@ div#main {
     font-size: 1.25rem;
 }
 
+.category-show-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.category-show-button a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(0, 0, 194);
+}
+
 .thread-links {
     width: 200px;
 }
