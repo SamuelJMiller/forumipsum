@@ -120,9 +120,7 @@ div#main {
     position: absolute;
     right: 5px;
     bottom: 6px;
-    color: white;
     font-size: 1.25rem;
-    cursor: pointer;
 }
 
 .thread-links {
