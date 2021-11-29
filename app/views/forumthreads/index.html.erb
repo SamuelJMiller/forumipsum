@@ -7,8 +7,8 @@
 <% @categories.each do |cat| %>
   <div class="category-container">
     <div class="category-header-container">
-      <h3 class="category-header"><%= cat.name %></h3>
-      <p class="category-show-button">show</p>
+      <h3 class="category-header"><span class="category-name-span"><%= cat.name %></span></h3>
+      <p class="category-show-button">+</p>
     </div>
     <% if @forumthreads.where("category == ?", cat.name).count > 0 %>
       <table id="table-cat-<%= cat.id %>" class="border-table">
