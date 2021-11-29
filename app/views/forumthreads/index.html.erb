@@ -62,3 +62,7 @@
     <% end %>
   </div>
 <% end %>
+
+<% if current_user and current_user.role > 1 %>
+  <p id="new-category-link"><%= link_to 'New Category', new_category_path %></p>
+<% end %>

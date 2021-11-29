@@ -27,6 +27,10 @@ Rails.application.routes.draw do
 
   match '/admin', to: 'admin#index', via: 'get', as: :admin
 
+  match '/categories/new', to: 'categories#new',    via: 'get', as: :new_category
+  match '/categories',     to: 'categories#create', via: 'post'
+  match '/categories',     to: 'categories#create', via: 'patch'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'forumthreads#index'
 end

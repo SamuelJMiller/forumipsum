@@ -1,10 +1,18 @@
 class CategoriesController < ApplicationController
     def new
-        @category = Category.create
+        if current_user and current_user.role > 1
+            @category = Category.new
+        end
     end
 
     def create
-        @category = Category.create(category_params)
+        if current_user and current_user.role > 1
+            @category = Category.create(category_params)
+
+            if @category.save
+                redirect_to root_path
+            end
+        end
     end
 
     private
