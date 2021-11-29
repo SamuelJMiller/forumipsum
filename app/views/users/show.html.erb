@@ -66,6 +66,11 @@
     </div>
 </div>
 
+<div id="sig-container">
+    <input id="sig-box" type="text">
+    <button id="sig-submit">Add Signature</button>
+</div>
+
 <% if current_user and @user != current_user and current_user.role > 1 and @user.role < current_user.role %>
     <div id="admin-actions">
         <h2 id="admin-actions-header">Actions</h2>
