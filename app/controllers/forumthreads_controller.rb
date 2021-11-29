@@ -27,8 +27,6 @@ class ForumthreadsController < ApplicationController
   def create
     @forumthread = current_user.forumthreads.build(forumthread_params)
 
-    @forumthread.category = Category.find(params[:category_id]).name # Doesn't work
-
     respond_to do |format|
       if @forumthread.save
         # Redirect to main page after creation
