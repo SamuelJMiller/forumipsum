@@ -389,6 +389,10 @@ div#main h2 {
     text-align: center;
 }
 
+#category-name-entry {
+    margin-top: 15px;
+}
+
 /* ADMIN PANEL */
 
 #admin-header,
