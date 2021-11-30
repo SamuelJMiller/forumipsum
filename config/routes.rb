@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   match '/categories',     to: 'categories#create', via: 'post'
   match '/categories',     to: 'categories#create', via: 'patch'
 
-  match '/:category_id/forumthreads/new', to: 'forumthreads#new', via: 'get', as: :new_cat_forumthread
+  match '/:category_id/forumthreads/new', to: 'forumthreads#new',    via: 'get',  as: :new_cat_forumthread
+  match '/:category_id/forumthreads',     to: 'forumthreads#create', via: 'post', as: :create_cat_forumthread
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'forumthreads#index'

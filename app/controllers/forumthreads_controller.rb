@@ -4,6 +4,11 @@ class ForumthreadsController < ApplicationController
   before_action :cannot_edit, only: [:update, :edit]
   before_action :authorize_destroy, only: [:destroy]
 
+  #after_action  :get_category_id, only: [:new]
+  after_action  :set_category, only: [:create]
+
+  @category_id = 0
+
   # GET /forumthreads or /forumthreads.json
   def index
     @categories = Category.all
@@ -80,7 +85,7 @@ class ForumthreadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def forumthread_params
-      params.require(:forumthread).permit(:title, :initial_post, :category_id)
+      params.require(:forumthread).permit(:title, :initial_post, :category)
     end
 
     def cannot_edit
@@ -109,6 +114,17 @@ class ForumthreadsController < ApplicationController
     # Set thread to banned
     def ban_thread
       @forumthread.is_banned = true
+      @forumthread.save
+    end
+
+    # Runs after new
+    def get_category_id
+      @category_id = params[:category_id]
+    end
+
+    # Runs after create
+    def set_category
+      @forumthread.category = Category.find(params[:category_id]).name
       @forumthread.save
     end
 end
