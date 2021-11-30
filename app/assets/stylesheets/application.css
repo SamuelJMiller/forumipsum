@@ -401,6 +401,10 @@ div#main h2 {
     justify-content: space-evenly;
 }
 
+.sig-input input {
+    background-color: #f2f2f2;
+}
+
 /* ADDITIONAL FORM STYLING */
 
 .form-header {

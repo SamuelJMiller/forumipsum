@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   def update_signature
     @user = User.find(params[:id])
     @user.update(sig_param)
+    redirect_to user_path(@user)
   end
 
   protected

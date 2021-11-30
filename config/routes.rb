@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     unlocks:       'users/unlocks'
   }
 
-  match '/users/:id/signature', to: 'users#update_signature', via: 'get', as: :update_user_sig
+  match '/users/:id/signature', to: 'users#update_signature', via: 'patch', as: :update_user_sig
   match '/users/:id/promote',   to: 'users#promote_user',     via: 'get', as: :promote_user
   match '/users/:id/demote',    to: 'users#demote_user',      via: 'get', as: :demote_user
   match '/users/:id/unban',     to: 'users#unban_user',       via: 'get', as: :unban_user
