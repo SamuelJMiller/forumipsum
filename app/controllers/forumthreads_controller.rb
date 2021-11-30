@@ -6,8 +6,6 @@ class ForumthreadsController < ApplicationController
 
   after_action  :set_category, only: [:create]
 
-  @category_id = 0
-
   # GET /forumthreads or /forumthreads.json
   def index
     @categories = Category.all

@@ -1,5 +1,5 @@
 <h1 id="new-thread-header" class="form-header">New Thread</h1>
 
-<%= render 'form', forumthread: @forumthread %>
+<%= render 'form', forumthread: @forumthread, category: params[:category_id] %>
 
 <p class="cancel-content-create"><%= link_to 'Cancel', root_path %></p>
