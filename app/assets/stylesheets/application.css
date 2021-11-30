@@ -23,7 +23,7 @@
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
 }
 
 #notice, #alert {
@@ -110,6 +110,7 @@ div#main {
     background-color: rgb(0, 0, 194);
     margin-top: 15px;
     padding: 5px;
+    min-width: 740px;
 }
 
 .category-name-span {
