@@ -4,7 +4,6 @@ class ForumthreadsController < ApplicationController
   before_action :cannot_edit, only: [:update, :edit]
   before_action :authorize_destroy, only: [:destroy]
 
-  #after_action  :get_category_id, only: [:new]
   after_action  :set_category, only: [:create]
 
   @category_id = 0
@@ -115,11 +114,6 @@ class ForumthreadsController < ApplicationController
     def ban_thread
       @forumthread.is_banned = true
       @forumthread.save
-    end
-
-    # Runs after new
-    def get_category_id
-      @category_id = params[:category_id]
     end
 
     # Runs after create
