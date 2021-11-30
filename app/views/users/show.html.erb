@@ -75,11 +75,11 @@
 <% if current_user and @user == current_user %>
     <div id="sig-form-container">
         <%= form_with(model: @user, local: true, :url => update_user_sig_path(@user)) do |form| %>
-            <div class="sig-input field">
+            <div id="sig-text" class="sig-input field">
                 <%= form.text_field :signature %>
             </div>
 
-            <div class="sig-input actions">
+            <div id="sig-submit" class="sig-input actions">
                 <%= form.submit "Add Signature" %>
             </div>
         <% end %>
