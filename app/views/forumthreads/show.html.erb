@@ -16,6 +16,11 @@
           <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
           <div class="post-container initial-post-container">
             <p class="post-body"><%= @forumthread.initial_post %></p>
+              <% if @forumthread.user.signature != nil %>
+                <div class="post-signature-container">
+                  <p class="post-signature">- <%= @forumthread.user.signature %></p>
+                </div>
+              <% end %>
           </div>
         </td>
       </tr>
@@ -32,6 +37,11 @@
           <% if post.is_banned == false %>
             <div class="post-container">
               <p class="post-body"><%= post.body %></p>
+              <% if post.user.signature != nil %>
+                <div class="post-signature-container">
+                  <p class="post-signature">- <%= post.user.signature %></p>
+                </div>
+              <% end %>
               <% if current_user and current_user.role == 0 %>
                 <p class="report-post"><%= link_to 'Report', report_post_path(@forumthread, post) %></p>
               <% elsif current_user and current_user.role > 0 %>

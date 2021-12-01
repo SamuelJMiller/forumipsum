@@ -278,6 +278,18 @@ div#main h2 {
     position: relative;
 }
 
+.post-signature-container {
+    position: absolute;
+    width: 420px; /* Adding 20 px to width to account for 10 px padding on post containers */
+    bottom: 10px;
+    right: 0;
+    text-align: center;
+}
+
+.post-signature {
+    font-style: italic;
+}
+
 .post-container:hover .report-post {
     visibility: visible;
 }
