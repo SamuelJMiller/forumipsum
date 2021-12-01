@@ -13,4 +13,8 @@ window.onload = function() {
             });
         }
     }
+
+    if (document.getElementById('user_signature') !== null) {
+        document.getElementById('user_signature').value = '';
+    }
 }
