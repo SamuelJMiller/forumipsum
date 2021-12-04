@@ -8,9 +8,17 @@
     <% if @forumthread.initial_post.length > 0 %>
       <tr>
         <% if @forumthread.user.is_banned == false %>
-          <td class="author-name-cell blue-link"><%= link_to @forumthread.user.username, user_path(@forumthread.user) %></td>
+          <td class="author-name-cell blue-link">
+            <div class="post-author-info-container">
+              <%= link_to @forumthread.user.username, user_path(@forumthread.user) %>
+            </div>
+          </td>
         <% else %>
-          <td class="banned-user-link"><%= @forumthread.user.username %></td>
+          <td class="banned-user-link">
+            <div class="post-author-info-container">
+              <p class="post-banned-user-text"><%= @forumthread.user.username %></p>
+            </div>
+          </td>
         <% end %>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(@forumthread.created_at).gsub('about','') %> ago</span>
@@ -28,9 +36,17 @@
     <% @forumthread.posts.each do |post| %>
       <tr>
         <% if post.user.is_banned == false %>
-          <td class="author-name-cell blue-link"><%= link_to post.user.username, user_path(post.user) %></td>
+          <td class="author-name-cell blue-link">
+            <div class="post-author-info-container">
+              <%= link_to post.user.username, user_path(post.user) %>
+            </div>
+          </td>
         <% else %>
-          <td class="banned-user-link"><%= post.user.username %></td>
+          <td class="banned-user-link">
+            <div class="post-author-info-container">
+              <p class="post-banned-user-text"><%= post.user.username %></p>
+            </div>
+          </td>
         <% end %>
         <td class="post-body-date-container">
           <span class="post-date-spans"><%= time_ago_in_words(post.created_at).gsub('about','') %> ago</span>

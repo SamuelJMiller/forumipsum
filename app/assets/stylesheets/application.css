@@ -294,6 +294,14 @@ div#main h2 {
     visibility: visible;
 }
 
+.post-author-info-container {
+    border: 1px solid green;
+}
+
+.post-banned-user-text {
+    border: 1px solid black;
+}
+
 .thread-title-par {
     margin-top: 10px;
     font-size: 125%;
