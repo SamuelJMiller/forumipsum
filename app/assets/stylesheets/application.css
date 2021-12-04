@@ -453,6 +453,12 @@ div#main h2 {
     background-color: #dfdfdf;
 }
 
+.profile-pic-container {
+    display: table;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
 /* ADDITIONAL FORM STYLING */
 
 .form-header {

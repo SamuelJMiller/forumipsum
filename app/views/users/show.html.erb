@@ -7,6 +7,11 @@
     <% elsif current_user and current_user.role == 3 %>
         <h3 id="rank-header">(Supreme Emperor)</h3>
     <% end %>
+
+    <div class="profile-pic-container">
+        <%= image_tag("test.png", width: 150) %>
+    </div>
+
     <div id="profile-top">
         <div class="profile-info-container-top">
             <h3 class="profile-info">Username: <%= @user.username %></h3>
@@ -33,6 +38,9 @@
     <% elsif @user.role == 3 %>
         <h3 id="rank-header">(Supreme Emperor)</h3>
     <% end %>
+
+
+
     <div id="profile-top">
         <div class="profile-info-container-top">
             <h3 class="profile-info">Last online: <%=
