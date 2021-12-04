@@ -8,9 +8,11 @@
         <h3 id="rank-header">(Supreme Emperor)</h3>
     <% end %>
 
-    <div class="profile-pic-container">
-        <%= image_tag(@user.image_url(:profile)) %>
-    </div>
+    <% if @user.image.length != 0 and @user.image != nil %>
+        <div class="profile-pic-container">
+            <%= image_tag(@user.image_url(:profile)) %>
+        </div>
+    <% end %>
 
     <div class="profile-pic-form-container">
         <%= form_with(model: @user, local: true, :html => { :multipart => true },
@@ -20,7 +22,7 @@
             </div>
 
             <div id="image-submit" class="actions">
-                <%= form.submit "Upload image" %>
+                <%= form.submit "Upload profile image" %>
             </div>
         <% end %>
     </div>
@@ -52,7 +54,11 @@
         <h3 id="rank-header">(Supreme Emperor)</h3>
     <% end %>
 
-
+    <% if @user.image.length != 0 and @user.image != nil %>
+        <div class="profile-pic-container">
+            <%= image_tag(@user.image_url(:profile)) %>
+        </div>
+    <% end %>
 
     <div id="profile-top">
         <div class="profile-info-container-top">

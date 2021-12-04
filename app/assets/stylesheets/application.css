@@ -439,21 +439,31 @@ div#main h2 {
     width: 400px;
 }
 
-#sig-submit {
+#sig-submit,
+#image-submit {
     display: table;
     margin-left: auto;
     margin-right: auto;
 }
 
-#sig-submit input {
+#sig-submit input,
+#image-submit input {
+    background-color: #f2f2f2;
     padding: 5px;
 }
 
-#sig-submit input:hover {
+#sig-submit input:hover,
+#image-submit input:hover {
     background-color: #dfdfdf;
 }
 
 .profile-pic-container {
+    display: table;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.profile-pic-form-container {
     display: table;
     margin: 0 auto;
     margin-top: 15px;
