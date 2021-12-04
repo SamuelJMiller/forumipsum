@@ -295,7 +295,8 @@ div#main h2 {
 }
 
 .post-author-info-container {
-    border: 1px solid green;
+    display: table;
+    margin: 0 auto;
 }
 
 .post-banned-user-text {

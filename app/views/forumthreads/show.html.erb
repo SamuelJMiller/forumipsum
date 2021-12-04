@@ -9,6 +9,7 @@
       <tr>
         <% if @forumthread.user.is_banned == false %>
           <td class="author-name-cell blue-link">
+            <%= image_tag("test.png", width: 100) %>
             <div class="post-author-info-container">
               <%= link_to @forumthread.user.username, user_path(@forumthread.user) %>
             </div>
@@ -37,6 +38,7 @@
       <tr>
         <% if post.user.is_banned == false %>
           <td class="author-name-cell blue-link">
+            <%= image_tag("test.png", width: 100) %>
             <div class="post-author-info-container">
               <%= link_to post.user.username, user_path(post.user) %>
             </div>
