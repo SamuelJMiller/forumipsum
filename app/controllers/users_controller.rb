@@ -42,6 +42,12 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def update_image
+    @user = User.find(params[:id])
+    @user.update(image_param)
+    redirect_to user_path(@user)
+  end
+
   protected
 
   def update_last_sign_in_at
@@ -59,6 +65,10 @@ class UsersController < ApplicationController
 
   def sig_param
     params.require(:user).permit(:signature)
+  end
+
+  def image_param
+    params.require(:user).permit(:image)
   end
 
   def ban_user

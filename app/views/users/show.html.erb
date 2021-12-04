@@ -9,7 +9,20 @@
     <% end %>
 
     <div class="profile-pic-container">
-        <%= image_tag("test.png", width: 150) %>
+        <%= image_tag(@user.image_url(:profile)) %>
+    </div>
+
+    <div class="profile-pic-form-container">
+        <%= form_with(model: @user, local: true, :html => { :multipart => true },
+            :url => update_user_image_path(@user)) do |form| %>
+            <div id="image-input" class="field">
+                <%= form.file_field :image %>
+            </div>
+
+            <div id="image-submit" class="actions">
+                <%= form.submit "Upload image" %>
+            </div>
+        <% end %>
     </div>
 
     <div id="profile-top">

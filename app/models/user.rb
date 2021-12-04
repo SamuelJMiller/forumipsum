@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :forumthreads
   has_many :posts
 
+  mount_uploader :image, ImageUploader
+
   # User search function
   def self.search(search)
     if search
