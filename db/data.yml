@@ -1,0 +1,447 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2021-10-15 02:34:04.729284'
+    - '2021-10-15 02:34:04.729284'
+
+---
+categories:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Uncategorized
+    - '2021-11-26 18:55:26.913331'
+    - '2021-11-26 18:55:54.511760'
+  - - 2
+    - test category
+    - '2021-11-26 19:36:43.768935'
+    - '2021-11-26 19:36:55.045831'
+
+---
+forumthreads:
+  columns:
+  - id
+  - title
+  - replycount
+  - created_at
+  - updated_at
+  - user_id
+  - is_banned
+  - initial_post
+  - report_weight
+  - category
+  records: 
+  - - 1
+    - no init
+    - 4
+    - '2021-10-19 21:16:29.074861'
+    - '2021-11-21 18:50:03.768994'
+    - 1
+    - false
+    - ''
+    - 0
+    - Uncategorized
+  - - 2
+    - init by sam
+    - 8
+    - '2021-10-19 21:16:45.126333'
+    - '2021-11-21 20:20:07.900962'
+    - 1
+    - false
+    - hey world
+    - 0
+    - Uncategorized
+  - - 3
+    - super awesome thread
+    - 2
+    - '2021-10-31 21:48:33.654457'
+    - '2021-11-22 16:11:41.812747'
+    - 2
+    - false
+    - Hey everybody! Who is your favorite singer?
+    - 0
+    - Uncategorized
+  - - 4
+    - Test Thread
+    - 3
+    - '2021-11-14 01:51:36.246915'
+    - '2021-11-26 20:02:40.712563'
+    - 1
+    - false
+    - Hey what's up this is the awesome test thread! Yay!
+    - 0
+    - Uncategorized
+  - - 7
+    - test category thread
+    - 0
+    - '2021-12-01 22:31:07.689524'
+    - '2021-12-01 22:31:07.703788'
+    - 1
+    - false
+    - test content
+    - 0
+    - test category
+
+---
+posts:
+  columns:
+  - id
+  - user_id
+  - body
+  - feedback_score
+  - is_banned
+  - created_at
+  - updated_at
+  - forumthread_id
+  - report_weight
+  records: 
+  - - 1
+    - 1
+    - first post on this thread
+    - 0
+    - false
+    - '2021-10-19 21:16:54.983148'
+    - '2021-11-21 20:20:13.105348'
+    - 1
+    - 0
+  - - 2
+    - 1
+    - first post that's not initial
+    - 0
+    - false
+    - '2021-10-19 21:17:09.437784'
+    - '2021-11-21 02:18:11.349198'
+    - 2
+    - 0
+  - - 3
+    - 1
+    - haha this is the second pst haha
+    - 0
+    - false
+    - '2021-10-19 21:19:08.749173'
+    - '2021-11-21 20:20:12.053415'
+    - 1
+    - 0
+  - - 4
+    - 1
+    - second uninitial opst (repli) haha Xd
+    - 0
+    - false
+    - '2021-10-19 21:20:04.899394'
+    - '2021-10-19 21:20:04.899394'
+    - 2
+    - 0
+  - - 5
+    - 1
+    - replying again!
+    - 0
+    - false
+    - '2021-10-19 21:33:50.404807'
+    - '2021-10-19 21:33:50.404807'
+    - 1
+    - 0
+  - - 6
+    - 1
+    - yet more posting by sam!
+    - 0
+    - false
+    - '2021-10-19 21:34:58.461538'
+    - '2021-11-21 02:18:00.093357'
+    - 2
+    - 0
+  - - 7
+    - 1
+    - i love to opst!
+    - 0
+    - false
+    - '2021-10-19 21:35:20.480336'
+    - '2021-10-19 21:35:20.480336'
+    - 2
+    - 0
+  - - 8
+    - 2
+    - i can see that...why don't you stop polluting this place
+    - 0
+    - false
+    - '2021-10-19 21:37:19.297080'
+    - '2021-10-19 21:37:19.297080'
+    - 2
+    - 0
+  - - 9
+    - 1
+    - make me...or stfu!
+    - 0
+    - false
+    - '2021-10-19 21:38:00.082859'
+    - '2021-10-19 21:38:00.082859'
+    - 2
+    - 0
+  - - 10
+    - 2
+    - fine! im sorry!
+    - 0
+    - false
+    - '2021-10-19 21:38:26.057114'
+    - '2021-10-19 21:38:26.057114'
+    - 2
+    - 0
+  - - 11
+    - 2
+    - i bet he left haha
+    - 0
+    - false
+    - '2021-10-20 00:08:33.290699'
+    - '2021-10-20 00:08:33.290699'
+    - 2
+    - 0
+  - - 12
+    - 3
+    - HI this is samuel! Nice to meet you!
+    - 0
+    - false
+    - '2021-10-29 18:56:58.363422'
+    - '2021-10-29 18:56:58.363422'
+    - 1
+    - 0
+  - - 13
+    - 1
+    - I like Freddy Mercury!
+    - 0
+    - false
+    - '2021-10-31 21:51:20.580353'
+    - '2021-11-22 16:27:09.168262'
+    - 3
+    - 0
+  - - 14
+    - 3
+    - Frank Sinatra is the best!
+    - 0
+    - false
+    - '2021-10-31 21:51:58.553033'
+    - '2021-10-31 21:51:58.553033'
+    - 3
+    - 0
+  - - 15
+    - 1
+    - Hey what's the weather like in Boston?
+    - 0
+    - false
+    - '2021-11-14 18:48:37.794303'
+    - '2021-11-26 20:02:42.286441'
+    - 4
+    - 0
+  - - 16
+    - 3
+    - Another test post.
+    - 0
+    - false
+    - '2021-11-15 15:58:02.388759'
+    - '2021-11-21 18:54:38.362313'
+    - 4
+    - 0
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - confirmation_token
+  - confirmed_at
+  - confirmation_sent_at
+  - unconfirmed_email
+  - failed_attempts
+  - unlock_token
+  - locked_at
+  - created_at
+  - updated_at
+  - signature
+  - is_banned
+  - banned_at
+  - post_count
+  - username
+  - role
+  - image
+  records: 
+  - - 1
+    - sam@itsecureadmin.com
+    - "$2a$12$7jETvblFp1Ua6LhxVAnWSu7yaCbXtZEGM3XsN2Glc4tRVW53Lqwgm"
+    -
+    -
+    -
+    - 150
+    - '2021-12-06 16:00:00.276703'
+    - '2021-12-06 15:59:57.965010'
+    - 127.0.0.1
+    - 127.0.0.1
+    - bugLXt85QYFez6AxvC-z
+    - '2021-10-17 15:16:12.771204'
+    - '2021-10-17 15:15:09.474082'
+    -
+    - 0
+    -
+    -
+    - '2021-10-17 15:15:09.473523'
+    - '2021-12-06 16:02:59.278797'
+    - More text for another signature
+    - false
+    -
+    - 0
+    - sam
+    - 3
+    - electron2.jpg
+  - - 2
+    - s@itsecureadmin.com
+    - "$2a$12$Ab8acWMshxv7YYDnOGa1M.uHSefbOiNElYSAVcdWxQuGwSIIRmrii"
+    -
+    -
+    -
+    - 66
+    - '2021-12-06 16:00:26.680600'
+    - '2021-12-06 16:00:25.425060'
+    - "::1"
+    - "::1"
+    - yhrVzg-bsQn-NhcSrDwk
+    - '2021-10-17 15:30:30.257118'
+    - '2021-10-17 15:29:59.928878'
+    -
+    - 0
+    -
+    -
+    - '2021-10-17 15:29:59.928632'
+    - '2021-12-06 16:03:53.091112'
+    - no i am
+    - false
+    -
+    - 0
+    - sam2
+    - 2
+    - beaver1.jpg
+  - - 3
+    - sam1@itsecureadmin.com
+    - "$2a$12$hAsk17g.sN/M6N2659kMN.QYddgrBTVco7OpEgiLtYOgIupj012gG"
+    -
+    -
+    -
+    - 35
+    - '2021-11-22 16:15:12.587696'
+    - '2021-11-22 16:15:08.048305'
+    - 127.0.0.1
+    - 127.0.0.1
+    - VUx6arkzg3wGEsEb5sEx
+    - '2021-10-18 15:04:01.477957'
+    - '2021-10-18 15:03:35.808748'
+    -
+    - 0
+    -
+    -
+    - '2021-10-18 15:03:35.807584'
+    - '2021-11-22 16:15:12.588036'
+    -
+    - false
+    -
+    - 0
+    - samuel
+    - 2
+    - ''
+  - - 4
+    - sam2@itsecureadmin.com
+    - "$2a$12$xBiWJppE3fV2jvQdfTHFueJNg45pWw.8SDMhfRQUbd9jbB8vNBh9q"
+    -
+    -
+    -
+    - 22
+    - '2021-11-29 00:28:46.312593'
+    - '2021-11-29 00:26:59.400263'
+    - 127.0.0.1
+    - 127.0.0.1
+    - ye42KzAu-NqnX2eZv35u
+    - '2021-11-01 14:55:21.759403'
+    - '2021-11-01 14:54:59.346802'
+    -
+    - 0
+    -
+    -
+    - '2021-11-01 14:54:59.346590'
+    - '2021-11-29 00:28:46.312801'
+    -
+    - false
+    -
+    - 0
+    - logan
+    - 1
+    - ''
+  - - 5
+    - sam3@itsecureadmin.com
+    - "$2a$12$LBwwGWhrbLyzdhl5sc8UmO6qRKM9qedtpBU8JUI8SVUtLrbXPZecO"
+    -
+    -
+    -
+    - 35
+    - '2021-11-26 20:02:23.363999'
+    - '2021-11-26 20:01:06.997017'
+    - 127.0.0.1
+    - 127.0.0.1
+    - iLgJ7AcHiS_Ph2sskAmm
+    - '2021-11-01 15:30:49.248272'
+    - '2021-11-01 15:30:33.994673'
+    -
+    - 0
+    -
+    -
+    - '2021-11-01 15:30:33.994487'
+    - '2021-11-26 20:02:23.364166'
+    -
+    - false
+    -
+    - 0
+    - logan2
+    - 0
+    - ''
+  - - 6
+    - supersamtesting@gmail.com
+    - "$2a$12$BoCzATX402EqWQ3v5Q2TLexjLyYzEoKXjhkd1PLJyvvMB5cyMXzwm"
+    -
+    -
+    -
+    - 20
+    - '2021-11-22 16:10:15.135206'
+    - '2021-11-21 19:14:19.682312'
+    - "::1"
+    - "::1"
+    - gjEGsfUWBgoF99uHHCU_
+    - '2021-11-09 16:03:02.389826'
+    - '2021-11-09 16:01:42.767813'
+    -
+    - 0
+    -
+    -
+    - '2021-11-09 16:01:42.767620'
+    - '2021-11-22 16:10:15.135506'
+    -
+    - false
+    -
+    - 0
+    - supersam
+    - 0
+    - ''

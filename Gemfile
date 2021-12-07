@@ -59,3 +59,4 @@ gem 'mysql2', '~> 0.5', '>= 0.5.3'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'yaml_db'
