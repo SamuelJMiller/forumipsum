@@ -21,9 +21,15 @@
                 <%= form.file_field :image %>
             </div>
 
-            <div id="image-submit" class="actions">
-                <%= form.submit "Upload profile image" %>
-            </div>
+            <% if @user.image.length != 0 and @user.image != nil %>
+                <div id="image-submit" class="actions">
+                    <%= form.submit "Replace profile image" %>
+                </div>
+            <% else %>
+                <div id="image-submit" class="actions">
+                    <%= form.submit "Upload profile image" %>
+                </div>
+            <% end %>
         <% end %>
     </div>
 
@@ -106,9 +112,15 @@
                 <%= form.text_field :signature %>
             </div>
 
-            <div id="sig-submit" class="sig-input actions">
-                <%= form.submit "Add Signature" %>
-            </div>
+            <% if @user.signature.length > 0 and @user.signature != nil %>
+                <div id="sig-submit" class="sig-input actions">
+                    <%= form.submit "Edit Signature" %>
+                </div>
+            <% else %>
+                <div id="sig-submit" class="sig-input actions">
+                    <%= form.submit "Add Signature" %>
+                </div>
+            <% end %>
         <% end %>
     </div>
 <% end %>
