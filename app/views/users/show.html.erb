@@ -21,7 +21,7 @@
                 <%= form.file_field :image %>
             </div>
 
-            <% if @user.image.length != 0 and @user.image != nil %>
+            <% if @user.image != nil and @user.image.length != 0 %>
                 <div id="image-submit" class="actions">
                     <%= form.submit "Replace profile image" %>
                 </div>
@@ -112,7 +112,7 @@
                 <%= form.text_field :signature %>
             </div>
 
-            <% if @user.signature.length > 0 and @user.signature != nil %>
+            <% if @user.signature != nil and @user.signature.length > 0 %>
                 <div id="sig-submit" class="sig-input actions">
                     <%= form.submit "Edit Signature" %>
                 </div>
