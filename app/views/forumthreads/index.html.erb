@@ -10,7 +10,7 @@
       <h3 class="category-header"><span class="category-name-span"><%= cat.name %></span></h3>
       <p class="category-show-button"><%= link_to "+", new_cat_forumthread_path(cat.id) %></p>
     </div>
-    <% if @forumthreads.where("category == ?", cat.name).count > 0 %>
+    <% if @forumthreads.where("category = ?", cat.name).count > 0 %>
       <table id="table-cat-<%= cat.id %>" class="border-table">
         <tbody>
           <tr>
