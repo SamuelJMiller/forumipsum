@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_194957) do
     t.integer "replycount", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.boolean "is_banned", default: false
     t.text "initial_post"
     t.integer "report_weight", default: 0
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 2021_12_04_194957) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.text "body"
     t.integer "feedback_score", default: 0
     t.boolean "is_banned", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "forumthread_id"
+    t.bigint "forumthread_id"
     t.integer "report_weight", default: 0
   end
 
